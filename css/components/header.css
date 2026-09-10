@@ -1,0 +1,198 @@
+/* ============================================================
+   HEADER — Navigation, Brand, Language Switcher & Mobile Drawer
+   ============================================================ */
+
+.site-header {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(244, 245, 248, .82);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(10, 16, 32, .06)
+}
+
+.brand img {
+    width: 132px;
+    height: 76px;
+    object-fit: contain;
+    display: block
+}
+
+.nav {
+    display: flex;
+    gap: 28px
+}
+
+.nav a,
+.results-link,
+.text-link {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px
+}
+
+.nav a {
+    opacity: .72;
+    transition: .25s
+}
+
+.nav a:hover {
+    opacity: 1
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+/* Learn More Button - Custom Header CTA */
+button.learn-more {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    width: 14.8rem;
+    height: auto;
+}
+
+button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: var(--blue);
+    border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0 0.75rem 2.85rem;
+    margin: 0;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 13.5px;
+    line-height: 1.6;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.learn-more:hover .circle {
+    width: 100%;
+    background: var(--blue-2);
+}
+
+button.learn-more:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+button.learn-more:hover .button-text {
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0
+}
+
+/* Header Language Switcher */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    direction: ltr;
+    gap: 4px;
+    background: rgba(10, 16, 32, 0.04);
+    border: 1px solid rgba(10, 16, 32, 0.08);
+    border-radius: 999px;
+    padding: 3px 6px;
+}
+
+.ls-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    padding: 5px 9px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.ls-btn:hover {
+    color: var(--ink);
+}
+
+.ls-btn.is-active {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(16, 38, 165, 0.25);
+}
+
+.ls-divider {
+    color: rgba(10, 16, 32, 0.15);
+    font-size: 11px;
+    user-select: none;
+}
+
+.mobile-lang-drawer {
+    display: none;
+}
