@@ -1,0 +1,267 @@
+/* ============================================================
+   ARABIC & RTL SYSTEM — Directional Flipping & Tajawal Font
+   ============================================================ */
+
+html[dir="rtl"],
+html[dir="rtl"] body {
+    font-family: "Tajawal", "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align: right;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] .hero-title,
+html[dir="rtl"] .section h2,
+html[dir="rtl"] .team-name,
+html[dir="rtl"] .onboarding-welcome {
+    font-family: "Tajawal", "Manrope", sans-serif;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+html[dir="rtl"] .header-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+/* RTL Header CTA Button (حجز موعد) */
+html[dir="rtl"] button.learn-more {
+    direction: rtl;
+}
+
+html[dir="rtl"] button.learn-more .circle {
+    left: auto;
+    right: 0;
+    margin: 0 0 0 auto;
+}
+
+html[dir="rtl"] button.learn-more .circle .icon.arrow {
+    left: auto;
+    right: 0.625rem;
+    transform: none !important;
+}
+
+html[dir="rtl"] button.learn-more .circle .icon.arrow::before {
+    right: auto;
+    left: 0.0625rem;
+    border-top: none;
+    border-right: none;
+    border-bottom: 0.125rem solid #fff;
+    border-left: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+html[dir="rtl"] button.learn-more .button-text {
+    left: 0;
+    right: 0;
+    padding: 0.75rem 2.85rem 0.75rem 0.75rem;
+    text-align: center;
+}
+
+html[dir="rtl"] button.learn-more:hover .circle {
+    width: 100%;
+}
+
+html[dir="rtl"] button.learn-more:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(-1rem, 0) !important;
+}
+
+/* RTL Hero: Text on Right, Masked Image on Left (Desktop) */
+@media (min-width: 1101px) {
+    html[dir="rtl"] .hero-info {
+        margin-right: 0;
+        margin-left: auto;
+        padding: 80px 6vw 80px 4vw;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .hero-title {
+        margin-right: 0;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .hero-lead {
+        margin-right: 0;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .hero-media {
+        clip-path: url(#heroCurveClipRtl);
+        -webkit-clip-path: url(#heroCurveClipRtl);
+    }
+
+    html[dir="rtl"] .hero-media-img {
+        right: auto;
+        left: 0;
+        object-position: 85% center;
+    }
+
+    html[dir="rtl"] .hero-curve-divider {
+        transform: scaleX(-1);
+        transform-origin: center;
+    }
+}
+
+/* RTL Marquee Ticker Typography */
+html[dir="rtl"] .ticker-item {
+    font-family: "Tajawal", "Manrope", sans-serif;
+    font-size: 13.5px;
+    letter-spacing: 0;
+}
+
+html[dir="rtl"] .card-arrow,
+html[dir="rtl"] .text-link .arrow,
+html[dir="rtl"] [data-dir-arrow] {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .search-shell {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .search-shell input {
+    text-align: right;
+    padding-right: 18px;
+    padding-left: 56px;
+}
+
+html[dir="rtl"] .search-icon {
+    left: auto;
+    right: 22px;
+}
+
+html[dir="rtl"] .contact-form input,
+html[dir="rtl"] .contact-form select,
+html[dir="rtl"] .contact-form textarea {
+    text-align: right;
+}
+
+html[dir="rtl"] .contact-details div {
+    text-align: right;
+}
+
+/* RTL Onboarding */
+html[dir="rtl"] .ob {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .ob-media-badge {
+    left: auto;
+    right: 48px;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+html[dir="rtl"] .ob-wave-desktop {
+    left: auto;
+    right: -89px;
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .ob-wave-mobile {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .ob-panel-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .ob-brand-block {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .ob-brand-details {
+    text-align: right;
+}
+
+html[dir="rtl"] .ob-brand-name,
+html[dir="rtl"] .ob-kicker,
+html[dir="rtl"] .ob-title,
+html[dir="rtl"] .ob-badge-title {
+    font-family: "Tajawal", "Manrope", sans-serif;
+}
+
+html[dir="rtl"] .ob-lang-btn {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+html[dir="rtl"] .ob-lang-text {
+    text-align: right;
+}
+
+html[dir="rtl"] .ob-lang-btn:hover {
+    transform: translateY(-2px);
+}
+
+html[dir="rtl"] .ob-cta-arrow {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
+html[dir="rtl"] .ob-cta:hover .ob-cta-arrow {
+    transform: scaleX(-1) translateX(-4px);
+}
+
+html[dir="rtl"] .ob-footer-note {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .ob.is-closing .ob-content-stage {
+    transform: translateX(-30px);
+}
+
+@media (max-width: 900px) {
+    html[dir="rtl"] .ob {
+        flex-direction: column;
+    }
+
+    html[dir="rtl"] .ob-media-badge {
+        right: 20px;
+    }
+
+    html[dir="rtl"] .ob.is-closing .ob-content-stage {
+        transform: translateY(30px);
+    }
+}
+
+html[dir="rtl"] .faq-q {
+    text-align: right;
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .voice-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .editorial-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .editorial-card .number {
+    right: auto;
+    left: 28px;
+}
+
+html[dir="rtl"] .footer-note {
+    text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ob,
+    .ob-photo-img,
+    .ob-wave-svg,
+    .ob-panel,
+    .ob-cta,
+    .ob-lang-btn {
+        transition: none !important;
+        animation: none !important;
+    }
+}

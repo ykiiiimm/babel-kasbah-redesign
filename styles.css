@@ -1,0 +1,25 @@
+/* ============================================================
+   LABORATOIRE BAB EL KASBAH — MASTER STYLESHEET
+   Orchestrates the modular CSS architecture. Order matters:
+   tokens → base → components → responsive → RTL.
+   ============================================================ */
+
+@import url("css/variables.css");
+@import url("css/base.css");
+
+@import url("css/components/onboarding.css");
+@import url("css/components/header.css");
+@import url("css/components/hero.css");
+@import url("css/components/ticker.css");
+@import url("css/components/expertise.css");
+@import url("css/components/analyses.css");
+@import url("css/components/team.css");
+@import url("css/components/results.css");
+@import url("css/components/voices.css");
+@import url("css/components/faq.css");
+@import url("css/components/contact.css");
+@import url("css/components/map.css");
+@import url("css/components/footer.css");
+
+@import url("css/responsive.css");
+@import url("css/rtl.css");

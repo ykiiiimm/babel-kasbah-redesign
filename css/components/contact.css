@@ -1,0 +1,76 @@
+/* ============================================================
+   CONTACT — Section 06: Contact Details & Appointment Form
+   ============================================================ */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr .9fr;
+    gap: 8vw;
+    background: #fff;
+    margin-top: 130px
+}
+
+.contact-copy h2 {
+    font-size: clamp(52px, 6vw, 84px);
+    line-height: .95;
+    margin: 18px 0 24px
+}
+
+.contact-details {
+    margin-top: 44px;
+    display: grid;
+    gap: 22px
+}
+
+.contact-details div {
+    display: grid;
+    gap: 4px
+}
+
+.contact-details span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--muted);
+    font-weight: 800
+}
+
+.contact-details strong {
+    font-family: Manrope;
+    font-size: 18px
+}
+
+.contact-form {
+    display: grid;
+    gap: 16px
+}
+
+.contact-form label {
+    display: grid;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    font: inherit;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--paper);
+    outline: none
+}
+
+.contact-form textarea {
+    min-height: 130px;
+    resize: vertical
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(32, 67, 234, .08)
+}

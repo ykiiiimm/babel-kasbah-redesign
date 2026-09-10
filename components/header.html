@@ -1,0 +1,51 @@
+<header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="Laboratoire Babel Kasbah">
+    <img src="assets/logo.png" alt="Laboratoire Babel Kasbah" />
+  </a>
+  <nav class="nav" id="mainNav" aria-label="Navigation principale">
+    <a href="#top" data-i18n="nav.home">Accueil</a>
+    <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+    <a href="#analyses" data-i18n="nav.analyses">Analyses</a>
+    <a href="#equipe" data-i18n="nav.team">Équipe</a>
+    <a href="#results" data-i18n="nav.results">Résultats</a>
+    <a href="#voices" data-i18n="nav.reviews">Avis</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+    <a href="#localisation" data-i18n="nav.map">Plan d'accès</a>
+
+    <!-- Mobile drawer language switcher -->
+    <div class="mobile-lang-drawer" role="group" aria-label="Langue">
+      <button class="mls-btn is-active" data-ls="fr">Français</button>
+      <button class="mls-btn" data-ls="ar">العربية</button>
+      <button class="mls-btn" data-ls="en">English</button>
+    </div>
+  </nav>
+  <div class="header-actions">
+    <!-- Dropdown Language Switcher -->
+    <div class="lang-dropdown" role="group" aria-label="Changer de langue">
+      <button class="lang-dropdown-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Select Language">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="var(--blue, #1026a5)">
+          <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
+        </svg>
+      </button>
+      <div class="lang-dropdown-menu" id="langMenu">
+        <button class="ls-btn" data-ls="en">English</button>
+        <button class="ls-btn is-active" data-ls="fr">French</button>
+        <button class="ls-btn" data-ls="ar">Arabic</button>
+      </div>
+    </div>
+
+    <button class="learn-more" id="headerCta" aria-label="Prendre rendez-vous" data-i18n-aria="header.ctaAria">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text" data-i18n="header.cta">Prendre rendez-vous</span>
+    </button>
+  </div>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" data-i18n-aria="header.openMenu"><span></span><span></span></button>
+</header>
+
+<!-- Language Switching Loader -->
+<div id="languageLoader" class="language-loader" style="display: none;">
+  <div class="spinner"></div>
+</div>
