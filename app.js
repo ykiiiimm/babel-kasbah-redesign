@@ -176,30 +176,28 @@ function setLanguage(lang) {
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
 
-  // Update Onboarding list rows if visible
-  document.querySelectorAll('.lang-row').forEach(row => {
-    const l = row.getAttribute('data-lang');
+  // Update Onboarding diamond buttons if visible
+  document.querySelectorAll('.ob-diamond-btn').forEach(btn => {
+    const l = btn.getAttribute('data-lang');
     const selected = l === lang;
-    row.classList.toggle('is-selected', selected);
-    row.setAttribute('aria-checked', selected ? 'true' : 'false');
+    btn.classList.toggle('is-selected', selected);
+    btn.setAttribute('aria-checked', selected ? 'true' : 'false');
   });
 
   // Update Onboarding texts
   const ob = translations[lang]?.onboarding;
   if (ob) {
-    const welcome = document.getElementById('obWelcome');
     const choose = document.getElementById('obChoose');
     const continueBtn = document.getElementById('obContinueText');
     const tagline = document.getElementById('obTagline');
-    if (welcome) welcome.textContent = ob.welcome;
     if (choose) choose.textContent = ob.chooseLanguage;
-    if (continueBtn) continueBtn.textContent = ob.continue;
+    if (continueBtn) continueBtn.textContent = ob.continue || 'Accéder au site';
     if (tagline) tagline.textContent = ob.tagline;
   }
 
   // Update Directional Arrows
   const dirArrow = isRtl ? '←' : '→';
-  document.querySelectorAll('.ob-arrow').forEach(a => a.textContent = dirArrow);
+  document.querySelectorAll('.ob-arrow, [data-dir-arrow]').forEach(a => a.textContent = dirArrow);
 
   // Re-run search/filter to ensure UI matches translated search terms
   renderAnalysisCards();
@@ -214,6 +212,8 @@ function initOnboarding() {
 
   const savedLang = localStorage.getItem('bkasbah_language');
   const onboardingDone = localStorage.getItem('bkasbah_onboarding_completed');
+  const urlParams = new URLSearchParams(window.location.search);
+  const forceOnboarding = urlParams.has('onboarding') || window.location.hash === '#welcome';
 
   // Determine initial language
   let initialLang = 'fr';
@@ -226,41 +226,64 @@ function initOnboarding() {
     else if (navLang.startsWith('en')) initialLang = 'en';
   }
 
-  setLanguage(initialLang);
+  let chosenLang = initialLang;
+  setLanguage(chosenLang);
 
-  if (onboardingDone === 'true') {
+  if (onboardingDone === 'true' && !forceOnboarding) {
     // Returning visitor: directly into website without interruption
     overlay.classList.add('is-hidden');
     return;
   }
 
-  // First time visitor: interactive selection
-  let chosenLang = initialLang;
+  function completeOnboarding() {
+    localStorage.setItem('bkasbah_language', chosenLang);
+    localStorage.setItem('bkasbah_onboarding_completed', 'true');
+    setLanguage(chosenLang);
 
-  const langRows = document.querySelectorAll('.lang-row');
-  langRows.forEach(row => {
-    row.addEventListener('click', () => {
-      const l = row.getAttribute('data-lang');
+    // Smooth, elegant exit animation (550ms)
+    overlay.classList.add('is-closing');
+    setTimeout(() => {
+      overlay.classList.add('is-hidden');
+    }, 550);
+  }
+
+  // Interactive diamond selection
+  const diamondBtns = overlay.querySelectorAll('.ob-diamond-btn');
+  diamondBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const l = btn.getAttribute('data-lang');
       if (l && translations[l]) {
         chosenLang = l;
         setLanguage(chosenLang);
+      }
+    });
+
+    // Double click to enter directly
+    btn.addEventListener('dblclick', () => {
+      const l = btn.getAttribute('data-lang');
+      if (l && translations[l]) {
+        chosenLang = l;
+        setLanguage(chosenLang);
+      }
+      completeOnboarding();
+    });
+
+    // Keyboard support
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const l = btn.getAttribute('data-lang');
+        if (l && translations[l]) {
+          chosenLang = l;
+          setLanguage(chosenLang);
+        }
       }
     });
   });
 
   const continueBtn = document.getElementById('obContinue');
   if (continueBtn) {
-    continueBtn.addEventListener('click', () => {
-      localStorage.setItem('bkasbah_language', chosenLang);
-      localStorage.setItem('bkasbah_onboarding_completed', 'true');
-      setLanguage(chosenLang);
-
-      // Smooth, elegant exit animation (600ms)
-      overlay.classList.add('is-closing');
-      setTimeout(() => {
-        overlay.classList.add('is-hidden');
-      }, 650);
-    });
+    continueBtn.addEventListener('click', completeOnboarding);
   }
 }
 

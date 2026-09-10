@@ -10,7 +10,7 @@ const translations = {
     onboarding: {
       welcome: "Bienvenue.",
       chooseLanguage: "Choisissez votre langue",
-      continue: "Continuer",
+      continue: "Accéder au site",
       tagline: "Laboratoire BAB EL KASBAH · Taroudant",
       frName: "Français",
       arName: "العربية",
@@ -249,7 +249,7 @@ const translations = {
     onboarding: {
       welcome: "مرحباً بكم.",
       chooseLanguage: "اختر لغتكم المفضلة",
-      continue: "متابعة",
+      continue: "الدخول إلى الموقع",
       tagline: "مختبر باب القصبة للتحاليل الطبية · تارودانت",
       frName: "Français",
       arName: "العربية",
@@ -488,7 +488,7 @@ const translations = {
     onboarding: {
       welcome: "Welcome.",
       chooseLanguage: "Choose your language",
-      continue: "Continue",
+      continue: "Enter Website",
       tagline: "BAB EL KASBAH Laboratory · Taroudant",
       frName: "Français",
       arName: "العربية",

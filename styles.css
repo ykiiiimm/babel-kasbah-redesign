@@ -1492,17 +1492,18 @@ h2 em {
     }
 }
 
-/* ============ ONBOARDING OVERLAY ============ */
+/* ============ ONBOARDING EXPERIENCE (CUSTOM ARCHITECTURAL SPLIT) ============ */
 .onboarding-overlay {
     position: fixed;
     inset: 0;
     z-index: 9999;
     display: flex;
-    background: #080d1a;
+    background: #ffffff;
+    overflow: hidden;
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .onboarding-overlay.is-closing {
@@ -1515,234 +1516,320 @@ h2 em {
     display: none !important;
 }
 
-/* Left Editorial Visual */
-.onboarding-visual {
-    flex: 1.25;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 56px;
-    background: #040814;
-}
-
-.onboarding-bg-img {
+/* --- Top-Left Blue Graphic Field (Pure Brand Geometry & Waves - Inspired by User Sketch) --- */
+.ob-graphic-zone {
     position: absolute;
     inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    background: #ffffff;
+}
+
+.ob-wave-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 38%;
-    filter: brightness(0.68) contrast(1.06);
-    transform: scale(1.02);
-    transition: transform 12s ease;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.5s ease;
 }
 
-.onboarding-overlay:hover .onboarding-bg-img {
-    transform: scale(1.06);
+.ob-wave-shape {
+    filter: drop-shadow(0 14px 40px rgba(7, 19, 79, 0.18));
 }
 
-.onboarding-visual-overlay {
+.ob-contour-1 {
+    opacity: 0.85;
+}
+
+.ob-contour-2 {
+    opacity: 0.65;
+}
+
+.ob-blue-content {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(8, 13, 26, 0.15) 0%, rgba(8, 13, 26, 0.85) 100%),
-                radial-gradient(ellipse at center, transparent 40%, rgba(8, 13, 26, 0.6) 100%);
+    top: 48px;
+    left: 48px;
+    z-index: 3;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
 }
 
-.onboarding-visual-brand {
+.ob-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 8px 24px rgba(7, 19, 79, 0.25);
+}
+
+.ob-badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ed171c;
+    box-shadow: 0 0 0 5px rgba(237, 23, 28, 0.22);
+    animation: obPulse 2s infinite ease-in-out;
+}
+
+.ob-badge-text {
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.ob-watermark-lockup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    user-select: none;
+}
+
+.ob-watermark-sub {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.ob-watermark-title {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 800;
+    letter-spacing: -.03em;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 4px 20px rgba(7, 19, 79, 0.35);
+}
+
+.ob-watermark-tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 4px 0 0;
+}
+
+@keyframes obPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.25); opacity: 0.75; }
+}
+
+/* --- Bottom-Right Language Console Zone (White & Blue) --- */
+.ob-console-zone {
     position: relative;
-    z-index: 2;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 6vh 6vw 7vh;
+    pointer-events: auto;
+    background: radial-gradient(ellipse at 88% 88%, rgba(16, 38, 165, 0.05) 0%, transparent 60%);
+}
+
+.ob-console-card {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ob-brand-lockup {
     display: flex;
     align-items: center;
     gap: 16px;
-    color: #fff;
-    font-family: Manrope, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+    margin-bottom: 24px;
 }
 
-.onboarding-visual-brand img {
-    height: 40px;
-    width: auto;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
-}
-
-/* Right Selection Panel */
-.onboarding-panel {
-    flex: 1;
-    min-width: 440px;
-    max-width: 560px;
-    background: #0c1424;
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 48px;
-    position: relative;
-    z-index: 2;
-}
-
-.onboarding-inner {
-    width: 100%;
-    max-width: 380px;
-}
-
-.onboarding-brand-header {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 32px;
-}
-
-.onboarding-logo {
+.ob-brand-logo {
     height: 48px;
     width: auto;
-    align-self: flex-start;
+    object-fit: contain;
 }
 
-.onboarding-tagline {
-    font-size: 11px;
+.ob-brand-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.ob-brand-kicker {
+    font-size: 10.5px;
     font-weight: 800;
-    letter-spacing: .16em;
+    letter-spacing: .18em;
     text-transform: uppercase;
-    color: #60a5fa;
+    color: var(--blue);
 }
 
-.onboarding-welcome {
+.ob-brand-doctor {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.ob-heading-block {
+    margin-bottom: 6px;
+}
+
+.ob-title {
     font-family: Manrope, sans-serif;
-    font-size: clamp(32px, 3.5vw, 42px);
+    font-size: clamp(30px, 3.4vw, 42px);
     font-weight: 800;
-    color: #fff;
-    margin: 0 0 8px;
+    color: var(--ink);
+    letter-spacing: -.035em;
     line-height: 1.1;
-    letter-spacing: -.03em;
+    margin: 0 0 10px;
 }
 
-.onboarding-subtitle {
-    font-size: 15px;
-    color: #94a3b8;
-    margin: 0 0 32px;
+.ob-tagline {
+    font-size: 14.5px;
+    color: var(--muted);
+    margin: 0;
     line-height: 1.5;
 }
 
-/* Language Selection Rows */
-.onboarding-lang-list {
+/* --- The 3 Diamond Language Selectors (Inspired by User Sketch) --- */
+.ob-diamonds-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin: 34px 0 36px;
+    padding: 10px 4px;
+}
+
+.ob-diamond-btn {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.lang-row {
+/* Middle diamond offset lower to match user sketch dynamic triad */
+.ob-diamond-btn.is-center {
+    margin-top: 18px;
+}
+
+.ob-diamond-shape {
+    width: 68px;
+    height: 68px;
+    border-radius: 17px;
+    transform: rotate(45deg);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 16px 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: 16px;
-    cursor: pointer;
-    color: #e2e8f0;
+    justify-content: center;
+    background: #ffffff;
+    border: 2px solid rgba(16, 38, 165, 0.16);
+    box-shadow: 0 8px 24px rgba(16, 38, 165, 0.07);
+    transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: 12px;
+}
+
+.ob-diamond-btn:hover .ob-diamond-shape {
+    border-color: var(--blue);
+    transform: rotate(45deg) scale(1.06);
+    box-shadow: 0 10px 28px rgba(16, 38, 165, 0.18);
+}
+
+.ob-diamond-btn.is-selected .ob-diamond-shape {
+    background: var(--blue);
+    border-color: var(--blue);
+    transform: rotate(45deg) scale(1.1);
+    box-shadow: 0 14px 34px rgba(16, 38, 165, 0.35);
+}
+
+.ob-diamond-code {
+    transform: rotate(-45deg);
+    font-family: Manrope, sans-serif;
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    color: var(--blue);
+    display: block;
+    line-height: 1;
+    transition: color 0.25s ease;
+}
+
+.ob-diamond-btn.is-selected .ob-diamond-code {
+    color: #ffffff;
+}
+
+.ob-diamond-label {
     font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: left;
-    outline: none;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-top: 10px;
+    transition: color 0.25s ease;
+    text-align: center;
 }
 
-.lang-row:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateX(4px);
-    color: #fff;
+.ob-diamond-btn.is-selected .ob-diamond-label {
+    color: var(--blue);
+    font-weight: 800;
 }
 
-.lang-row.is-selected {
-    background: rgba(16, 38, 165, 0.35);
-    border-color: var(--blue-2);
-    box-shadow: 0 8px 24px rgba(16, 38, 165, 0.3);
-    color: #fff;
+/* --- Action Row: Enter Button --- */
+.ob-action-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.lang-check-icon {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
+.ob-enter-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    color: transparent;
-    margin-right: 14px;
-    flex-shrink: 0;
-    transition: all 0.2s ease;
-}
-
-.lang-row.is-selected .lang-check-icon {
-    background: var(--blue-2);
-    border-color: var(--blue-2);
-    color: #fff;
-}
-
-.lang-name {
-    flex: 1;
-    font-size: 16px;
-}
-
-.lang-badge {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    padding: 3px 8px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #94a3b8;
-    transition: all 0.2s ease;
-}
-
-.lang-row.is-selected .lang-badge {
-    background: var(--blue-2);
-    color: #fff;
-}
-
-/* Continue CTA Button */
-.onboarding-continue-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    margin-top: 28px;
-    padding: 16px 28px;
+    gap: 14px;
+    padding: 15px 36px;
     border-radius: 999px;
-    background: var(--blue-2);
-    color: #fff;
+    background: var(--blue);
+    color: #ffffff;
     font-family: inherit;
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 700;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 28px rgba(32, 67, 234, 0.35);
+    box-shadow: 0 10px 26px rgba(16, 38, 165, 0.24);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     outline: none;
 }
 
-.onboarding-continue-btn:hover {
-    background: #1435d6;
+.ob-enter-btn:hover {
+    background: var(--blue-2);
     transform: translateY(-2px);
-    box-shadow: 0 14px 34px rgba(32, 67, 234, 0.45);
+    box-shadow: 0 14px 34px rgba(16, 38, 165, 0.35);
 }
 
-.onboarding-continue-btn .ob-arrow {
+.ob-enter-btn .ob-arrow {
     transition: transform 0.25s ease;
+    font-size: 17px;
+    line-height: 1;
 }
 
-.onboarding-continue-btn:hover .ob-arrow {
+.ob-enter-btn:hover .ob-arrow {
     transform: translateX(4px);
 }
 
@@ -1843,27 +1930,93 @@ h2 em {
         overflow-y: auto;
     }
 
-    .onboarding-visual {
-        flex: none;
-        height: 220px;
-        padding: 24px;
+    .ob-graphic-zone {
+        position: relative;
+        inset: auto;
+        height: 210px;
+        width: 100%;
+        flex-shrink: 0;
+        background: #07134f;
     }
 
-    .onboarding-panel {
+    .ob-wave-canvas {
+        height: 100%;
+        width: 100%;
+    }
+
+    .ob-blue-content {
+        top: 24px;
+        left: 20px;
+        right: 20px;
+        gap: 14px;
+    }
+
+    .ob-watermark-title {
+        font-size: 27px;
+    }
+
+    .ob-watermark-tag {
+        font-size: 11px;
+    }
+
+    .ob-console-zone {
         flex: 1;
-        min-width: 0;
-        max-width: 100%;
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 32px 24px 44px;
+        padding: 24px 20px 40px;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
     }
 
-    .onboarding-inner {
+    .ob-console-card {
         max-width: 100%;
+        align-items: center;
+        text-align: center;
     }
 
-    .lang-row {
-        min-height: 52px;
+    .ob-brand-lockup {
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .ob-title {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .ob-tagline {
+        text-align: center;
+    }
+
+    .ob-diamonds-wrapper {
+        gap: 16px;
+        margin: 20px 0 26px;
+        justify-content: center;
+    }
+
+    .ob-diamond-shape {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        margin: 8px;
+    }
+
+    .ob-diamond-code {
+        font-size: 14px;
+    }
+
+    .ob-diamond-label {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .ob-action-row {
+        justify-content: center;
+    }
+
+    .ob-enter-btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
     }
 
     .lang-switcher {
@@ -2047,18 +2200,48 @@ html[dir="rtl"] .contact-details div {
     text-align: right;
 }
 
-html[dir="rtl"] .lang-row {
+/* RTL Onboarding Overlay */
+html[dir="rtl"] .ob-wave-canvas {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .ob-blue-content {
+    left: auto;
+    right: 48px;
+    align-items: flex-end;
     text-align: right;
+}
+
+html[dir="rtl"] .ob-console-zone {
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .ob-console-card {
+    align-items: flex-start;
+    text-align: right;
+}
+
+html[dir="rtl"] .ob-brand-lockup {
     flex-direction: row-reverse;
 }
 
-html[dir="rtl"] .lang-row:hover {
-    transform: translateX(-4px);
+html[dir="rtl"] .ob-brand-meta {
+    text-align: right;
 }
 
-html[dir="rtl"] .lang-check-icon {
-    margin-right: 0;
-    margin-left: 14px;
+html[dir="rtl"] .ob-title,
+html[dir="rtl"] .ob-tagline {
+    text-align: right;
+}
+
+html[dir="rtl"] .ob-diamonds-wrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .ob-enter-btn:hover .ob-arrow {
+    transform: translateX(-4px);
 }
 
 html[dir="rtl"] .faq-q {
@@ -2085,10 +2268,10 @@ html[dir="rtl"] .footer-note {
 
 @media (prefers-reduced-motion: reduce) {
     .onboarding-overlay,
-    .onboarding-bg-img,
-    .lang-row,
-    .onboarding-continue-btn {
+    .ob-enter-btn,
+    .ob-diamond-shape,
+    .ob-badge-dot {
         transition: none !important;
         animation: none !important;
     }
-}
+}

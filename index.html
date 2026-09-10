@@ -16,57 +16,119 @@
 </head>
 
 <body>
-  <!-- ============ ONBOARDING OVERLAY ============ -->
+  <!-- ============ ONBOARDING OVERLAY (CUSTOM ARCHITECTURAL SPLIT) ============ -->
   <div id="onboardingOverlay" class="onboarding-overlay" role="dialog" aria-modal="true" aria-label="Sélection de langue">
-    <!-- Left panel: editorial visual -->
-    <div class="onboarding-visual" aria-hidden="true">
-      <img src="assets/lab-luxury.jpg" alt="" class="onboarding-bg-img" />
-      <div class="onboarding-visual-overlay"></div>
-      <div class="onboarding-visual-brand">
-        <img src="assets/logo.png" alt="Laboratoire BAB EL KASBAH" />
-        <span>Laboratoire BAB EL KASBAH</span>
+
+    <!-- Blue Architectural Graphic Field (NO raster images - Pure brand geometry & wave curves inspired by user sketch) -->
+    <div class="ob-graphic-zone" aria-hidden="true">
+      <svg class="ob-wave-canvas" viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="obBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#07134f" />
+            <stop offset="42%" stop-color="#1026a5" />
+            <stop offset="100%" stop-color="#1b3ed9" />
+          </linearGradient>
+          <linearGradient id="obWaveStroke1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.4)" />
+            <stop offset="55%" stop-color="rgba(32,67,234,0.45)" />
+            <stop offset="100%" stop-color="rgba(16,38,165,0.15)" />
+          </linearGradient>
+          <linearGradient id="obWaveStroke2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.15)" />
+            <stop offset="100%" stop-color="rgba(32,67,234,0.2)" />
+          </linearGradient>
+        </defs>
+
+        <!-- Deep Royal Blue Wave dividing line matching the user sketch -->
+        <path class="ob-wave-shape" d="M 0,0 L 1280,0 C 1200,90 1050,250 820,390 C 560,540 260,670 0,730 Z" fill="url(#obBlueGrad)" />
+
+        <!-- Contour Accent Lines along the S-curve -->
+        <path class="ob-contour-1" d="M 1280,0 C 1200,90 1050,250 820,390 C 560,540 260,670 0,730" fill="none" stroke="url(#obWaveStroke1)" stroke-width="2.5" vector-effect="non-scaling-stroke" />
+        <path class="ob-contour-2" d="M 1300,0 C 1220,105 1065,268 832,408 C 570,558 270,688 0,748" fill="none" stroke="url(#obWaveStroke2)" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+
+        <!-- Delicate Precision Diagnostic Waveforms / Circles in Blue Field -->
+        <g opacity="0.08" stroke="#ffffff" stroke-width="1" fill="none">
+          <circle cx="280" cy="220" r="170" />
+          <circle cx="280" cy="220" r="290" stroke-dasharray="6 8" />
+          <circle cx="280" cy="220" r="410" />
+          <line x1="80" y1="220" x2="480" y2="220" stroke-dasharray="4 4" />
+          <line x1="280" y1="30" x2="280" y2="410" stroke-dasharray="4 4" />
+        </g>
+      </svg>
+
+      <!-- Minimalist Luxury Watermark & Pill Badge -->
+      <div class="ob-blue-content">
+        <div class="ob-badge">
+          <span class="ob-badge-dot"></span>
+          <span class="ob-badge-text">PLATEAU TECHNIQUE DE POINTE · BIOLOGIE MÉDICALE</span>
+        </div>
+        <div class="ob-watermark-lockup">
+          <span class="ob-watermark-sub">LABORATOIRE D'ANALYSES MÉDICALES</span>
+          <h2 class="ob-watermark-title">BAB EL KASBAH</h2>
+          <p class="ob-watermark-tag">EXCELLENCE · RIGUEUR · PROXIMITÉ · TAROUDANT</p>
+        </div>
       </div>
     </div>
 
-    <!-- Right panel: language selection -->
-    <div class="onboarding-panel">
-      <div class="onboarding-inner">
+    <!-- Bottom-Right Language Console Zone (White & Blue from sketch) -->
+    <div class="ob-console-zone">
+      <div class="ob-console-card">
 
-        <div class="onboarding-brand-header">
-          <img src="assets/logo.png" alt="Laboratoire BAB EL KASBAH" class="onboarding-logo" />
-          <div class="onboarding-tagline" id="obTagline">Laboratoire BAB EL KASBAH · Taroudant</div>
+        <!-- Lab Brand Header -->
+        <div class="ob-brand-lockup">
+          <img src="assets/logo.png" alt="Laboratoire BAB EL KASBAH" class="ob-brand-logo" />
+          <div class="ob-brand-meta">
+            <span class="ob-brand-kicker">LABORATOIRE D'ANALYSES MÉDICALES</span>
+            <span class="ob-brand-doctor">Dr. CHELLAOUI Said · Taroudant</span>
+          </div>
         </div>
 
-        <h1 class="onboarding-welcome" id="obWelcome">Bienvenue.</h1>
-        <p class="onboarding-subtitle" id="obChoose">Choisissez votre langue</p>
-
-        <div class="onboarding-lang-list" id="langList" role="radiogroup" aria-label="Langues disponibles">
-          <button type="button" class="lang-row is-selected" data-lang="fr" role="radio" aria-checked="true">
-            <span class="lang-check-icon" aria-hidden="true">✓</span>
-            <span class="lang-name">Français</span>
-            <span class="lang-badge">FR</span>
-          </button>
-
-          <button type="button" class="lang-row" data-lang="ar" role="radio" aria-checked="false">
-            <span class="lang-check-icon" aria-hidden="true">✓</span>
-            <span class="lang-name">العربية</span>
-            <span class="lang-badge">AR</span>
-          </button>
-
-          <button type="button" class="lang-row" data-lang="en" role="radio" aria-checked="false">
-            <span class="lang-check-icon" aria-hidden="true">✓</span>
-            <span class="lang-name">English</span>
-            <span class="lang-badge">EN</span>
-          </button>
+        <!-- Main Language Heading -->
+        <div class="ob-heading-block">
+          <h1 class="ob-title" id="obChoose">Choisissez votre langue</h1>
+          <p class="ob-tagline" id="obTagline">Laboratoire BAB EL KASBAH · Taroudant</p>
         </div>
 
-        <button class="onboarding-continue-btn" id="obContinue" type="button">
-          <span id="obContinueText">Continuer</span>
-          <span class="ob-arrow" data-dir-arrow aria-hidden="true">→</span>
-        </button>
+        <!-- The 3 Diamond Language Selectors (From User Sketch) -->
+        <div class="ob-diamonds-wrapper" id="langList" role="radiogroup" aria-label="Langues disponibles">
+
+          <!-- Diamond 1: Français -->
+          <button type="button" class="ob-diamond-btn is-selected" data-lang="fr" role="radio" aria-checked="true" aria-label="Français">
+            <div class="ob-diamond-shape">
+              <span class="ob-diamond-code">FR</span>
+            </div>
+            <span class="ob-diamond-label">Français</span>
+          </button>
+
+          <!-- Diamond 2: العربية (Offset lower to match the user sketch rhythm) -->
+          <button type="button" class="ob-diamond-btn is-center" data-lang="ar" role="radio" aria-checked="false" aria-label="العربية">
+            <div class="ob-diamond-shape">
+              <span class="ob-diamond-code">AR</span>
+            </div>
+            <span class="ob-diamond-label">العربية</span>
+          </button>
+
+          <!-- Diamond 3: English -->
+          <button type="button" class="ob-diamond-btn" data-lang="en" role="radio" aria-checked="false" aria-label="English">
+            <div class="ob-diamond-shape">
+              <span class="ob-diamond-code">EN</span>
+            </div>
+            <span class="ob-diamond-label">English</span>
+          </button>
+
+        </div>
+
+        <!-- Continue CTA Button -->
+        <div class="ob-action-row">
+          <button class="ob-enter-btn" id="obContinue" type="button">
+            <span id="obContinueText">Accéder au site</span>
+            <span class="ob-arrow" data-dir-arrow aria-hidden="true">→</span>
+          </button>
+        </div>
 
       </div>
     </div>
+
   </div>
 
   <!-- ============ MAIN SITE ============ -->
