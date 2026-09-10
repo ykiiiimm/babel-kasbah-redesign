@@ -22,6 +22,7 @@
       <img src="assets/logo.png" alt="Laboratoire Babel Kasbah" />
     </a>
     <nav class="nav" id="mainNav" aria-label="Navigation principale">
+      <a href="#top">Accueil</a>
       <a href="#expertise">Expertise</a>
       <a href="#analyses">Analyses</a>
       <a href="#equipe">Équipe</a>
@@ -43,45 +44,39 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="pulse"></span> Biologie médicale · Taroudant</div>
-        <h1>Votre santé.<br><em>Notre précision.</em></h1>
-        <p class="hero-lead">Laboratoire d'analyses médicales sous la direction du <strong>Dr. CHELLAOUI Said</strong>.
-          Plateau technique moderne, résultats rapides en ligne et accueil sans rendez-vous.</p>
+    <section class="hero" id="hero">
+      <div class="hero-info reveal">
+        <div class="hero-eyebrow">
+          <span class="pulse"></span>
+          <span>Biologie médicale · Taroudant</span>
+        </div>
 
-        <div class="hero-trust">
-          <div class="trust-card trust-dark">
-            <span class="trust-badge">24H</span>
-            <strong>Résultats rapides</strong>
-            <p>Consultation et téléchargement en ligne.</p>
-          </div>
-          <div class="trust-card trust-dark">
-            <span class="trust-badge">DÈS 07:00</span>
-            <strong>Sans rendez-vous</strong>
-            <p>Accueil direct du lundi au samedi.</p>
-          </div>
-          <div class="trust-card trust-dark">
-            <span class="trust-badge">MUTUELLES</span>
-            <strong>Conventionné</strong>
-            <p>AMO, CNSS, CNOPS & tiers payant.</p>
-          </div>
-        </div>
+        <h1 class="hero-title">Votre santé.<br><em>Notre précision.</em></h1>
+
+        <p class="hero-lead">
+          Laboratoire d'analyses médicales sous la direction du <strong>Dr. CHELLAOUI Said</strong>,
+          spécialiste en biologie clinique. Plateau technique moderne, résultats rapides en ligne et accueil sans rendez-vous.
+        </p>
+
       </div>
-      <div class="hero-visual reveal reveal-delay">
-        <div class="hero-image-wrap">
-          <img src="assets/lab-luxury.jpg" alt="Laboratoire BAB EL KASBAH moderne" />
-          <div class="floating-card floating-card-top">
-            <span class="small-label">DIRECTION</span>
-            <strong>Dr. CHELLAOUI Said</strong>
-            <span class="floating-sub">Spécialiste en biologie clinique</span>
-          </div>
-          <div class="floating-card floating-card-bottom">
-            <span class="mini-icon">✦</span>
-            <span>Technologie moderne<br>+ expertise humaine</span>
-          </div>
-        </div>
+
+      <div class="hero-media reveal reveal-delay">
+        <img src="assets/lab-luxury.jpg" alt="Laboratoire BAB EL KASBAH moderne" class="hero-media-img" />
       </div>
+
+      <!-- Organic Curved Divider Line matching the wireframe sketch -->
+      <svg class="hero-curve-divider" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 60,0 C 61.5,18 63.5,35 62.5,48 C 61.5,62 53,82 42,100" fill="none" stroke="rgba(16, 38, 165, 0.16)" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+      </svg>
+
+      <!-- SVG ClipPath definition in normalized coordinates (0 to 1) for the image -->
+      <svg width="0" height="0" class="hero-clip-def" aria-hidden="true">
+        <defs>
+          <clipPath id="heroCurveClip" clipPathUnits="objectBoundingBox">
+            <path d="M 0.60 0 C 0.615 0.18, 0.635 0.35, 0.625 0.48 C 0.615 0.62, 0.53 0.82, 0.42 1 L 1 1 L 1 0 Z" />
+          </clipPath>
+        </defs>
+      </svg>
     </section>
 
     <section class="ticker" aria-label="Spécialités et services">
@@ -120,7 +115,6 @@
       </div>
       <div class="editorial-grid">
         <article class="editorial-image tall"><img src="assets/lab-modern.jpg" alt="Automatisation d'un laboratoire" />
-          <div class="image-caption">Automatisation · Traçabilité · Qualité</div>
         </article>
         <article class="editorial-card dark"><span class="number">01</span>
           <h3>Une biologie<br>qui se lit facilement.</h3>
@@ -210,110 +204,55 @@
         <!-- 01 : doc5 -->
         <article class="team-member-card" tabindex="0">
           <div class="team-photo-wrap">
-            <img src="assets/doc5.jpg" alt="Dr. M. Choudry — Spécialiste Biochimie Médicale" loading="lazy" />
-            <div class="team-card-gradient"></div>
-          </div>
-          <div class="team-card-top">
-            <span class="team-badge">Biochimie & Immuno</span>
+            <img src="assets/doc5.jpg" alt="Dr. M. Choudry" loading="lazy" />
           </div>
           <div class="team-card-body">
             <span class="team-role-label">Biologiste Médicale</span>
             <h3 class="team-name">Dr. M. Choudry</h3>
-            <div class="team-expand-info">
-              <p>Exploration métabolique, bilans hormonaux et immunologie clinique.</p>
-              <div class="team-pill-wrap">
-                <span class="team-pill">Biochimie</span>
-                <span class="team-pill">Hormones</span>
-              </div>
-            </div>
           </div>
         </article>
 
         <!-- 02 : doc2 -->
         <article class="team-member-card" tabindex="0">
           <div class="team-photo-wrap">
-            <img src="assets/doc2.jpg" alt="Prof. Y. Al-Fassi — Conseil & Validation Clinique" loading="lazy" />
-            <div class="team-card-gradient"></div>
-          </div>
-          <div class="team-card-top">
-            <span class="team-badge">Conseil Clinique</span>
+            <img src="assets/doc2.jpg" alt="Prof. Y. Al-Fassi" loading="lazy" />
           </div>
           <div class="team-card-body">
             <span class="team-role-label">Professeur Biologiste</span>
             <h3 class="team-name">Prof. Y. Al-Fassi</h3>
-            <div class="team-expand-info">
-              <p>Validation analytique, interprétation avancée et conseil aux praticiens.</p>
-              <div class="team-pill-wrap">
-                <span class="team-pill">Validation</span>
-                <span class="team-pill">Conseil</span>
-              </div>
-            </div>
           </div>
         </article>
 
         <!-- 03 : doc1 (Director - Featured Center) -->
         <article class="team-member-card member-featured" tabindex="0">
           <div class="team-photo-wrap">
-            <img src="assets/doc1.jpg" alt="Dr. CHELLAOUI Said — Directeur Médical" loading="lazy" />
-            <div class="team-card-gradient"></div>
-          </div>
-          <div class="team-card-top">
-            <span class="team-badge badge-featured">✦ Direction Médicale</span>
+            <img src="assets/doc1.jpg" alt="Dr. CHELLAOUI Said" loading="lazy" />
           </div>
           <div class="team-card-body">
             <span class="team-role-label label-featured">Directeur · Fondateur</span>
             <h3 class="team-name">Dr. CHELLAOUI Said</h3>
-            <div class="team-expand-info">
-              <p>Spécialiste en Biologie Clinique. Rigueur médicale et coordination du plateau technique.</p>
-              <div class="team-pill-wrap">
-                <span class="team-pill pill-featured">Biologie Clinique</span>
-                <span class="team-pill pill-featured">Directeur</span>
-              </div>
-            </div>
           </div>
         </article>
 
         <!-- 04 : doc4 -->
         <article class="team-member-card" tabindex="0">
           <div class="team-photo-wrap">
-            <img src="assets/doc4.jpg" alt="Dr. K. Bennani — Automatisation & Plateau Technique" loading="lazy" />
-            <div class="team-card-gradient"></div>
-          </div>
-          <div class="team-card-top">
-            <span class="team-badge">Plateau Technique</span>
+            <img src="assets/doc4.jpg" alt="Dr. K. Bennani" loading="lazy" />
           </div>
           <div class="team-card-body">
             <span class="team-role-label">Biologiste Spécialiste</span>
             <h3 class="team-name">Dr. K. Bennani</h3>
-            <div class="team-expand-info">
-              <p>Pilotage des automates de pointe, traçabilité et contrôle qualité continu.</p>
-              <div class="team-pill-wrap">
-                <span class="team-pill">Automates</span>
-                <span class="team-pill">Qualité</span>
-              </div>
-            </div>
           </div>
         </article>
 
         <!-- 05 : doc3 -->
         <article class="team-member-card" tabindex="0">
           <div class="team-photo-wrap">
-            <img src="assets/doc3.jpg" alt="Dr. S. Amrani — Hématologie & Diagnostic Rapide" loading="lazy" />
-            <div class="team-card-gradient"></div>
-          </div>
-          <div class="team-card-top">
-            <span class="team-badge">Hématologie</span>
+            <img src="assets/doc3.jpg" alt="Dr. S. Amrani" loading="lazy" />
           </div>
           <div class="team-card-body">
             <span class="team-role-label">Biologiste Médicale</span>
             <h3 class="team-name">Dr. S. Amrani</h3>
-            <div class="team-expand-info">
-              <p>Cytologie sanguine, hémostase et rendu des bilans urgents 24h/24.</p>
-              <div class="team-pill-wrap">
-                <span class="team-pill">Hématologie</span>
-                <span class="team-pill">Urgence 24h</span>
-              </div>
-            </div>
           </div>
         </article>
       </div>
