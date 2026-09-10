@@ -176,8 +176,8 @@ function setLanguage(lang) {
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
 
-  // Update Onboarding diamond buttons if visible
-  document.querySelectorAll('.ob-diamond-btn').forEach(btn => {
+  // Update Onboarding language buttons if visible
+  document.querySelectorAll('.ob-lang-btn').forEach(btn => {
     const l = btn.getAttribute('data-lang');
     const selected = l === lang;
     btn.classList.toggle('is-selected', selected);
@@ -190,9 +190,24 @@ function setLanguage(lang) {
     const choose = document.getElementById('obChoose');
     const continueBtn = document.getElementById('obContinueText');
     const tagline = document.getElementById('obTagline');
+    const kicker = document.getElementById('obKicker');
+    const subtitle = document.getElementById('obSubtitle');
+    const badgeTitle = document.getElementById('obBadgeTitle');
+    const badgeSub = document.getElementById('obBadgeSub');
+    const descFr = document.getElementById('obDescFr');
+    const descAr = document.getElementById('obDescAr');
+    const descEn = document.getElementById('obDescEn');
+
     if (choose) choose.textContent = ob.chooseLanguage;
     if (continueBtn) continueBtn.textContent = ob.continue || 'Accéder au site';
     if (tagline) tagline.textContent = ob.tagline;
+    if (kicker && ob.kicker) kicker.textContent = ob.kicker;
+    if (subtitle && ob.subtitle) subtitle.textContent = ob.subtitle;
+    if (badgeTitle && ob.badgeTitle) badgeTitle.textContent = ob.badgeTitle;
+    if (badgeSub && ob.badgeSub) badgeSub.textContent = ob.badgeSub;
+    if (descFr && ob.frDesc) descFr.textContent = ob.frDesc;
+    if (descAr && ob.arDesc) descAr.textContent = ob.arDesc;
+    if (descEn && ob.enDesc) descEn.textContent = ob.enDesc;
   }
 
   // Update Directional Arrows
@@ -230,7 +245,7 @@ function initOnboarding() {
   setLanguage(chosenLang);
 
   if (onboardingDone === 'true' && !forceOnboarding) {
-    // Returning visitor: directly into website without interruption
+    // Returning visitor: skip onboarding
     overlay.classList.add('is-hidden');
     return;
   }
@@ -240,25 +255,30 @@ function initOnboarding() {
     localStorage.setItem('bkasbah_onboarding_completed', 'true');
     setLanguage(chosenLang);
 
-    // Smooth, elegant exit animation (550ms)
+    // Elegant exit animation
     overlay.classList.add('is-closing');
     setTimeout(() => {
       overlay.classList.add('is-hidden');
-    }, 550);
+    }, 600);
   }
 
-  // Interactive diamond selection
-  const diamondBtns = overlay.querySelectorAll('.ob-diamond-btn');
-  diamondBtns.forEach(btn => {
+  // Language pill button selection & interactions
+  const langBtns = Array.from(overlay.querySelectorAll('.ob-lang-btn'));
+  langBtns.forEach((btn, index) => {
     btn.addEventListener('click', () => {
       const l = btn.getAttribute('data-lang');
       if (l && translations[l]) {
+        if (chosenLang === l) {
+          // Second click on the active language directly enters
+          completeOnboarding();
+          return;
+        }
         chosenLang = l;
         setLanguage(chosenLang);
       }
     });
 
-    // Double click to enter directly
+    // Double-click fast entry
     btn.addEventListener('dblclick', () => {
       const l = btn.getAttribute('data-lang');
       if (l && translations[l]) {
@@ -268,7 +288,7 @@ function initOnboarding() {
       completeOnboarding();
     });
 
-    // Keyboard support
+    // Keyboard navigation: Enter / Space and ArrowUp / ArrowDown
     btn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -277,6 +297,14 @@ function initOnboarding() {
           chosenLang = l;
           setLanguage(chosenLang);
         }
+      } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        const nextIndex = (index + 1) % langBtns.length;
+        langBtns[nextIndex].focus();
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const prevIndex = (index - 1 + langBtns.length) % langBtns.length;
+        langBtns[prevIndex].focus();
       }
     });
   });

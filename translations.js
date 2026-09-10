@@ -9,12 +9,19 @@ const translations = {
     },
     onboarding: {
       welcome: "Bienvenue.",
+      kicker: "BIENVENUE · MARHABAN · WELCOME",
       chooseLanguage: "Choisissez votre langue",
+      subtitle: "Portail officiel de biologie médicale et analyses cliniques",
       continue: "Accéder au site",
-      tagline: "Laboratoire BAB EL KASBAH · Taroudant",
+      tagline: "Laboratoire de Biologie Médicale · Taroudant",
+      badgeTitle: "Biologie Médicale de Précision",
+      badgeSub: "Plateau Technique Moderne · Taroudant",
       frName: "Français",
+      frDesc: "Site en français",
       arName: "العربية",
-      enName: "English"
+      arDesc: "الموقع باللغة العربية",
+      enName: "English",
+      enDesc: "Website in English"
     },
     nav: {
       home: "Accueil",
@@ -248,12 +255,19 @@ const translations = {
     },
     onboarding: {
       welcome: "مرحباً بكم.",
+      kicker: "مرحباً بكم · BIENVENUE · WELCOME",
       chooseLanguage: "اختر لغتكم المفضلة",
+      subtitle: "المنصة الرسمية للتحاليل الطبية والبيولوجيا السريرية",
       continue: "الدخول إلى الموقع",
       tagline: "مختبر باب القصبة للتحاليل الطبية · تارودانت",
+      badgeTitle: "بيولوجيا طبية عالية الدقة",
+      badgeSub: "منصة تقنية متطورة · تارودانت",
       frName: "Français",
+      frDesc: "Site en français",
       arName: "العربية",
-      enName: "English"
+      arDesc: "الموقع باللغة العربية",
+      enName: "English",
+      enDesc: "Website in English"
     },
     nav: {
       home: "الرئيسية",
@@ -487,12 +501,19 @@ const translations = {
     },
     onboarding: {
       welcome: "Welcome.",
+      kicker: "WELCOME · BIENVENUE · MARHABAN",
       chooseLanguage: "Choose your language",
+      subtitle: "Official clinical biology and diagnostic testing portal",
       continue: "Enter Website",
-      tagline: "BAB EL KASBAH Laboratory · Taroudant",
+      tagline: "BAB EL KASBAH Medical Laboratory · Taroudant",
+      badgeTitle: "High-Precision Clinical Biology",
+      badgeSub: "Modern Automated Platform · Taroudant",
       frName: "Français",
+      frDesc: "Site in French",
       arName: "العربية",
-      enName: "English"
+      arDesc: "Website in Arabic",
+      enName: "English",
+      enDesc: "Website in English"
     },
     nav: {
       home: "Home",
