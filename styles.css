@@ -711,116 +711,20 @@ h2 em {
 }
 
 .team-showcase {
-    display: flex;
-    gap: 16px;
     margin-top: 48px;
-    height: 520px;
-    align-items: stretch;
-}
-
-.team-member-card {
-    flex: 1;
-    min-width: 0;
-    position: relative;
     border-radius: 28px;
     overflow: hidden;
+    box-shadow: 0 16px 40px rgba(10, 16, 32, 0.08);
     background: #080d1a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 32px rgba(10, 16, 32, 0.08);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 22px;
-    outline: none;
-    transition: flex 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.4s ease,
-        border-color 0.4s ease;
 }
 
-.team-member-card.member-featured {
-    flex: 1.28;
-    border: 1.5px solid rgba(16, 38, 165, 0.35);
-    box-shadow: 0 16px 40px rgba(16, 38, 165, 0.12);
-}
-
-.team-showcase:hover .team-member-card {
-    flex: 0.82;
-}
-
-.team-showcase:hover .team-member-card:hover,
-.team-member-card:focus-visible {
-    flex: 1.62;
-    transform: translateY(-6px);
-    border-color: rgba(32, 67, 234, 0.5);
-    box-shadow: 0 24px 60px rgba(16, 38, 165, 0.24);
-}
-
-.team-photo-wrap {
-    position: absolute;
-    inset: 0;
+.team-pic {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.team-photo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    height: auto;
     display: block;
+    border-radius: 28px;
 }
 
-.team-card-body {
-    position: relative;
-    z-index: 4;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: #fff;
-    margin: -22px;
-    padding: 36px 22px 22px;
-    background: linear-gradient(180deg, transparent 0%, rgba(8, 13, 26, 0.72) 100%);
-    border-radius: 0 0 28px 28px;
-    pointer-events: none;
-}
-
-.team-role-label {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: #60a5fa;
-    line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-}
-
-.team-role-label.label-featured {
-    color: #93c5fd;
-}
-
-.team-name {
-    font-family: Manrope, sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.2;
-    margin: 2px 0 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
-}
-
-.member-featured .team-name {
-    font-size: 22px;
-}
 
 .results-panel {
     margin: 0 6vw;
@@ -1390,30 +1294,6 @@ h2 em {
         grid-template-columns: 1fr
     }
 
-    .team-showcase {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        height: auto;
-        gap: 16px;
-    }
-
-    .team-showcase:hover .team-member-card {
-        flex: auto;
-        opacity: 1;
-        filter: none;
-    }
-
-    .team-member-card {
-        min-height: 480px;
-        flex: auto !important;
-        opacity: 1 !important;
-        filter: none !important;
-    }
-
-    .team-member-card.member-featured {
-        grid-column: span 2;
-    }
-
     .results-panel {
         gap: 30px
     }
@@ -1556,42 +1436,12 @@ h2 em {
     }
 
     .team-showcase {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        height: auto;
-        gap: 14px;
-        margin: 28px -20px 0;
-        padding: 4px 20px 20px;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
+        margin-top: 28px;
+        border-radius: 18px;
     }
 
-    .team-showcase::-webkit-scrollbar {
-        display: none;
-    }
-
-    .team-showcase:hover .team-member-card {
-        opacity: 1;
-        filter: none;
-        flex: 0 0 270px;
-    }
-
-    .team-member-card {
-        min-width: 270px;
-        max-width: 290px;
-        height: 460px;
-        min-height: 460px;
-        flex: 0 0 270px !important;
-        scroll-snap-align: start;
-        opacity: 1 !important;
-        filter: none !important;
-    }
-
-    .team-member-card.member-featured {
-        grid-column: auto;
-        flex: 0 0 280px !important;
+    .team-pic {
+        border-radius: 18px;
     }
 
     .contact-section {
