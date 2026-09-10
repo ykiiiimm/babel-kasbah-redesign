@@ -711,8 +711,9 @@ h2 em {
 }
 
 .team-showcase {
-    margin-top: 48px;
-    border-radius: 28px;
+    max-width: 900px;
+    margin: 48px auto 0;
+    border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 16px 40px rgba(10, 16, 32, 0.08);
     background: #080d1a;
@@ -722,7 +723,7 @@ h2 em {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 28px;
+    border-radius: 24px;
 }
 
 
