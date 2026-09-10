@@ -123,3 +123,39 @@ if (learnMoreBtn) {
     }
   });
 }
+
+// Contact form: send message to 0775210035 (+212775210035)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('contactName')?.value.trim() || 'Non précisé';
+    const phone = document.getElementById('contactPhone')?.value.trim() || 'Non précisé';
+    const subject = document.getElementById('contactSubject')?.value.trim() || 'Prendre rendez-vous';
+    const message = document.getElementById('contactMessage')?.value.trim() || 'Bonjour, je souhaite obtenir des informations.';
+
+    const text = `*Nouvelle demande - Laboratoire Babel Kasbah*\n\n` +
+      `*Nom:* ${name}\n` +
+      `*Téléphone:* ${phone}\n` +
+      `*Demande:* ${subject}\n` +
+      `*Message:* ${message}`;
+
+    const targetPhone = '212775210035'; // 0775210035
+    const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(text)}`;
+
+    const submitBtn = document.getElementById('contactSubmit');
+    if (submitBtn) {
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Ouverture WhatsApp... <span>✓</span>';
+      submitBtn.disabled = true;
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 2500);
+    }
+
+    window.open(whatsappUrl, '_blank');
+  });
+}
+

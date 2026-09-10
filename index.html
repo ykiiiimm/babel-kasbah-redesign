@@ -324,16 +324,26 @@
           <div><span>Horaires</span><strong>Lun — Sam · 07:00 — 18:00</strong></div>
         </div>
       </div>
-      <form class="contact-form" onsubmit="return false"><label>Nom complet<input type="text"
-            placeholder="Votre nom" /></label><label>Téléphone<input type="tel"
-            placeholder="Votre numéro" /></label><label>Votre demande<select>
+      <form class="contact-form" id="contactForm">
+        <label>Nom complet
+          <input type="text" id="contactName" name="name" placeholder="Votre nom" required />
+        </label>
+        <label>Téléphone
+          <input type="tel" id="contactPhone" name="phone" placeholder="Votre numéro" required />
+        </label>
+        <label>Votre demande
+          <select id="contactSubject" name="subject">
             <option>Prendre rendez-vous</option>
             <option>Renseignement sur une analyse</option>
             <option>Question sur un résultat</option>
             <option>Autre</option>
-          </select></label><label>Message<textarea
-            placeholder="Comment pouvons-nous vous aider ?"></textarea></label><button class="button button-primary"
-          type="submit">Envoyer la demande <span>↗</span></button></form>
+          </select>
+        </label>
+        <label>Message
+          <textarea id="contactMessage" name="message" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+        </label>
+        <button class="button button-primary" id="contactSubmit" type="submit">Envoyer la demande <span>↗</span></button>
+      </form>
     </section>
 
     <!-- ============ 07 LOCALISATION / MAP ============ -->
