@@ -422,6 +422,7 @@ h2 em {
     display: flex;
     overflow: hidden;
     white-space: nowrap;
+    direction: ltr;
     padding: 18px 0;
     background: #0a1020;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -435,6 +436,7 @@ h2 em {
 .ticker-track {
     display: flex;
     width: max-content;
+    direction: ltr;
     animation: tickerSeamless 30s linear infinite;
     will-change: transform;
 }
@@ -1748,6 +1750,7 @@ h2 em {
 .lang-switcher {
     display: inline-flex;
     align-items: center;
+    direction: ltr;
     gap: 4px;
     background: rgba(10, 16, 32, 0.04);
     border: 1px solid rgba(10, 16, 32, 0.08);
@@ -1918,17 +1921,102 @@ html[dir="rtl"] .onboarding-welcome {
     letter-spacing: normal;
 }
 
-html[dir="rtl"] .nav {
-    margin-left: 0;
-    margin-right: auto;
+html[dir="rtl"] .header-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
 }
 
-html[dir="rtl"] .header-actions {
-    flex-direction: row-reverse;
+/* RTL Header CTA Button (حجز موعد) */
+html[dir="rtl"] button.learn-more {
+    direction: rtl;
+}
+
+html[dir="rtl"] button.learn-more .circle {
+    left: auto;
+    right: 0;
+    margin: 0 0 0 auto;
+}
+
+html[dir="rtl"] button.learn-more .circle .icon.arrow {
+    left: auto;
+    right: 0.625rem;
+    transform: none !important;
+}
+
+html[dir="rtl"] button.learn-more .circle .icon.arrow::before {
+    right: auto;
+    left: 0.0625rem;
+    border-top: none;
+    border-right: none;
+    border-bottom: 0.125rem solid #fff;
+    border-left: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+html[dir="rtl"] button.learn-more .button-text {
+    left: 0;
+    right: 0;
+    padding: 0.75rem 2.85rem 0.75rem 0.75rem;
+    text-align: center;
+}
+
+html[dir="rtl"] button.learn-more:hover .circle {
+    width: 100%;
+}
+
+html[dir="rtl"] button.learn-more:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(-1rem, 0) !important;
+}
+
+/* RTL Hero: Text on Right, Masked Image on Left (Desktop) */
+@media (min-width: 1101px) {
+    html[dir="rtl"] .hero-info {
+        margin-right: 0;
+        margin-left: auto;
+        padding: 80px 6vw 80px 4vw;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .hero-title {
+        margin-right: 0;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .hero-lead {
+        margin-right: 0;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .hero-media {
+        clip-path: url(#heroCurveClipRtl);
+        -webkit-clip-path: url(#heroCurveClipRtl);
+    }
+
+    html[dir="rtl"] .hero-media-img {
+        right: auto;
+        left: 0;
+        object-position: 85% center;
+    }
+
+    html[dir="rtl"] .hero-curve-divider {
+        transform: scaleX(-1);
+        transform-origin: center;
+    }
+}
+
+/* RTL Marquee Ticker Typography */
+html[dir="rtl"] .ticker-item {
+    font-family: "Tajawal", "Manrope", sans-serif;
+    font-size: 13.5px;
+    letter-spacing: 0;
 }
 
 html[dir="rtl"] .card-arrow,
-html[dir="rtl"] .arrow,
+html[dir="rtl"] .text-link .arrow,
 html[dir="rtl"] [data-dir-arrow] {
     display: inline-block;
     transform: scaleX(-1);
