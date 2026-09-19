@@ -1,0 +1,86 @@
+/* ============================================================
+   LABORATOIRE BAB EL KASBAH — MOBILE RTL STYLESHEET
+   Exclusively for Arabic [dir="rtl"] in mobile.html
+   ============================================================ */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .m-title,
+[dir="rtl"] .m-lead,
+[dir="rtl"] .m-hero-lead,
+[dir="rtl"] .m-hero-title {
+  text-align: right;
+}
+
+/* RTL Drawer - slides from the left */
+[dir="rtl"] .m-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+  box-shadow: 10px 0 40px rgba(10, 16, 32, 0.2);
+}
+
+[dir="rtl"] .m-drawer.open {
+  transform: translateX(0);
+}
+
+/* Search Box in RTL */
+[dir="rtl"] .m-search-icon-left {
+  left: auto;
+  right: 16px;
+}
+
+[dir="rtl"] .m-search-clear {
+  right: auto;
+  left: 12px;
+}
+
+[dir="rtl"] .m-search-input {
+  text-align: right;
+  padding: 0 46px 0 46px;
+}
+
+/* Analysis Card */
+[dir="rtl"] .m-analysis-content {
+  padding-right: 0;
+  padding-left: 12px;
+}
+
+/* Select Dropdown arrow on left */
+[dir="rtl"] .m-select {
+  background-position: left 14px center;
+  text-align: right;
+}
+
+/* FAQ Accordion */
+[dir="rtl"] .m-faq-q {
+  text-align: right;
+}
+
+/* Reverse directional arrows in RTL */
+[dir="rtl"] [data-dir-arrow] {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+/* Reviews */
+[dir="rtl"] .m-review-quote {
+  text-align: right;
+}
+
+/* Drawer links */
+[dir="rtl"] .m-drawer-link span {
+  transform: scaleX(-1);
+}
+
+/* Ticker in RTL */
+[dir="rtl"] .m-ticker {
+  animation: mTickerRunRtl 24s linear infinite;
+}
+
+@keyframes mTickerRunRtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}

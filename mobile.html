@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>
+    (function () {
+      function isMobile() {
+        var ua = (navigator.userAgent || navigator.vendor || window.opera || '').toLowerCase();
+        var isMobileUA = /android|webos|iphone|ipod|blackberry|iemobile|opera mini|mobile/i.test(ua);
+        var isSmall = window.innerWidth <= 768;
+        var isPhoneLandscape = isMobileUA && window.innerHeight <= 550 && window.innerWidth <= 960;
+        return isSmall || isPhoneLandscape;
+      }
+      if (!isMobile()) {
+        window.location.replace('index.html' + window.location.search + window.location.hash);
+      }
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          if (!isMobile()) {
+            window.location.replace('index.html' + window.location.search + window.location.hash);
+          }
+        }, 200);
+      });
+    })();
+  </script>
+  <meta name="theme-color" content="#0b1328" />
+  <title id="pageTitle">Laboratoire BAB EL KASBAH — Biologie médicale · Dr. CHELLAOUI Said</title>
+  <meta id="pageDescription" name="description" content="Laboratoire BAB EL KASBAH à Taroudant — analyses médicales, résultats rapides et accompagnement humain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/mobile.css" />
+</head>
+
+<body>
+  <header class="mobile-header is-home" id="mobileHeader">
+    <a class="brand-mobile" href="#home" aria-label="Laboratoire BAB EL KASBAH">
+      <img src="assets/logo.png" alt="Laboratoire BAB EL KASBAH" id="mobileLogo" />
+    </a>
+    <div class="header-tools">
+      <button class="language-trigger" id="langChip" type="button" aria-label="Changer de langue" aria-haspopup="dialog">
+        <svg class="language-globe" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        <span id="langLabel">FR</span>
+      </button>
+      <button class="menu-trigger" id="mBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mDrawer">
+        <svg class="menu-icon-open" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg class="menu-icon-close" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-scrim" id="mScrim"></div>
+  <aside class="mobile-drawer" id="mDrawer" aria-label="Menu principal">
+    <div class="drawer-heading">
+      <div>
+        <span class="drawer-kicker" data-i18n="mobile.drawerKicker">BAB EL KASBAH</span>
+        <strong data-i18n="mobile.drawerTitle">À votre écoute.</strong>
+      </div>
+      <button class="drawer-close" id="dClose" type="button" aria-label="Fermer le menu">×</button>
+    </div>
+    <nav class="drawer-nav" aria-label="Navigation mobile">
+      <a class="drawer-link" href="#home" data-view="home"><span data-i18n="nav.home">Accueil</span><small>01</small></a>
+      <a class="drawer-link" href="#analyses" data-view="analyses"><span data-i18n="nav.analyses">Analyses</span><small>02</small></a>
+      <a class="drawer-link" href="#visit" data-view="visit"><span data-i18n="mobile.navVisit">Préparer ma visite</span><small>03</small></a>
+      <a class="drawer-link" href="#contact" data-view="contact"><span data-i18n="nav.contact">Contact</span><small>04</small></a>
+      <a class="drawer-link" href="#info" data-view="info"><span data-i18n="mobile.navInfo">Le laboratoire</span><small>05</small></a>
+    </nav>
+    <div class="drawer-bottom">
+      <a class="drawer-intern" href="internship.html"><strong data-i18n="mobile.drawerIntern">Postuler pour un stage</strong><b aria-hidden="true">↗</b></a>
+      <a class="drawer-call" href="tel:+212808504833"><span data-i18n="mobile.drawerCall">Appeler le laboratoire</span><strong>08 08 504 833</strong></a>
+      <p style="display: flex; align-items: center; justify-content: center; gap: 6px;">
+      </p>
+    </div>
+  </aside>
+
+  <main id="mobileApp">
+    <section class="screen is-active home-screen" id="view-home" aria-label="Accueil">
+      <section class="hero-mobile">
+        <img class="hero-image" src="assets/lab-luxury.jpg" alt="Laboratoire BAB EL KASBAH moderne" data-i18n-alt="hero.imgAlt" />
+        <div class="hero-shade"></div>
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="availability">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span data-i18n="mobile.hours">Lun. — Sam. · 07:00 — 18:00</span>
+          </p>
+          <h1><span data-i18n="hero.title">Votre santé.</span><em data-i18n="hero.titleEm">Notre précision.</em></h1>
+          <p class="hero-copy" data-i18n="mobile.heroCopy">Laboratoire d’analyses médicales · Taroudant</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#contact" data-view="contact"><span data-i18n="mobile.ctaContact">Prendre rendez-vous</span><b aria-hidden="true">↗</b></a>
+            <a class="round-action" href="tel:+212808504833" aria-label="Appeler le laboratoire" data-i18n-aria="hero.ctaCallAria">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="screen page-screen" id="view-analyses" aria-label="Catalogue des analyses">
+      <div class="page-top"><p class="eyebrow" data-i18n="mobile.analysesKicker">02 / CATALOGUE</p><h1 data-i18n="analyses.title">Trouvez votre analyse.</h1><p data-i18n="analyses.lead">Recherchez par nom, domaine ou besoin. L’essentiel, sans détour.</p></div>
+      <div class="search-shell"><span aria-hidden="true">⌕</span><input id="analysisSearch" type="search" autocomplete="off" placeholder="Ex. glycémie, NFS, cholestérol…" data-i18n-placeholder="analyses.searchPlaceholder" aria-label="Rechercher une analyse" data-i18n-aria="analyses.searchAria" /><button id="sClearBtn" class="search-clear" type="button" aria-label="Effacer la recherche">×</button></div>
+      <div class="filter-rail" aria-label="Catégories d’analyses">
+        <button class="chip active" type="button" data-filter="all" data-i18n="analyses.filterAll">Toutes</button><button class="chip" type="button" data-filter="routine" data-i18n="analyses.filterRoutine">Routine</button><button class="chip" type="button" data-filter="hormones" data-i18n="analyses.filterHormones">Hormones</button><button class="chip" type="button" data-filter="immunologie" data-i18n="analyses.filterImmuno">Immunologie</button><button class="chip" type="button" data-filter="microbiologie" data-i18n="analyses.filterMicro">Microbiologie</button>
+      </div>
+      <div class="analysis-list" id="analysisGrid">
+        <article class="analysis-card" data-card-index="0" data-name="nfs numération formule sanguine blood count hématologie" data-category="routine"><span class="analysis-code">NFS · 01</span><div><h3>Numération formule sanguine</h3><p>Globules, plaquettes et paramètres hématologiques.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+        <article class="analysis-card" data-card-index="1" data-name="glycemie glucose sucre diabete" data-category="routine"><span class="analysis-code">GLY · 02</span><div><h3>Glycémie</h3><p>Dosage du glucose sanguin.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+        <article class="analysis-card" data-card-index="2" data-name="bilan lipidique cholesterol triglycerides hdl ldl graisse" data-category="routine"><span class="analysis-code">LIP · 03</span><div><h3>Bilan lipidique</h3><p>Cholestérol total, HDL, LDL, triglycérides.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+        <article class="analysis-card" data-card-index="3" data-name="tsh hormones thyroide goitre endocrino" data-category="hormones"><span class="analysis-code">TSH · 04</span><div><h3>TSH ultrasensible</h3><p>Exploration de la fonction thyroïdienne.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+        <article class="analysis-card" data-card-index="4" data-name="ferritine hormones fer anemie fatigue" data-category="hormones"><span class="analysis-code">FER · 05</span><div><h3>Ferritine</h3><p>Évaluation des réserves en fer.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+        <article class="analysis-card" data-card-index="5" data-name="crp inflammation immunologie infection" data-category="immunologie"><span class="analysis-code">CRP · 06</span><div><h3>CRP</h3><p>Marqueur biologique de l’inflammation.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+        <article class="analysis-card" data-card-index="6" data-name="vitamine d hormones os fatigue immunite" data-category="hormones"><span class="analysis-code">VD · 07</span><div><h3>Vitamine D</h3><p>Dosage de la 25-OH vitamine D.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+        <article class="analysis-card" data-card-index="7" data-name="culture microbiologie bacteriologie germes antibiogramme ecbu" data-category="microbiologie"><span class="analysis-code">MIC · 08</span><div><h3>Culture microbiologique</h3><p>Recherche et identification de germes.</p></div><span class="card-arrow" aria-hidden="true">→</span></article>
+      </div>
+      <div class="analyses-empty hidden" id="analysesEmpty"><strong data-i18n="analyses.emptyTitle">Aucune analyse trouvée.</strong><p data-i18n="analyses.emptyBody">Essayez un autre terme.</p><button id="analysesReset" type="button" data-i18n="analyses.emptyReset">Réinitialiser</button></div>
+      <aside class="catalogue-help"><span aria-hidden="true">?</span><div><strong data-i18n="mobile.analysesHelpTitle">Vous ne trouvez pas votre analyse ?</strong><p data-i18n="mobile.analysesHelpSub">Notre équipe peut vous orienter directement.</p></div><a href="#contact" data-view="contact"><span data-i18n="mobile.analysesHelpLink">Nous écrire</span> <b aria-hidden="true">→</b></a></aside>
+    </section>
+
+    <section class="screen page-screen" id="view-visit" aria-label="Préparer ma visite">
+      <div class="page-top visit-heading"><p class="eyebrow" data-i18n="mobile.visitKicker">03 / VOTRE VISITE</p><h1 data-i18n="mobile.visitTitle">Venir l’esprit tranquille.</h1><p data-i18n="mobile.visitLead">Tout ce qu’il faut savoir avant votre passage au laboratoire.</p></div>
+      <div class="hours-card"><strong>07:00 — 18:00</strong><span data-i18n="mobile.visitDays">Du lundi au samedi</span></div>
+      <div class="visit-steps">
+        <article><span>01</span><div><h2 data-i18n="mobile.visitS1Title">Avant de venir</h2><p data-i18n="mobile.visitS1Desc">Pour certaines analyses, un jeûne de 8 à 12 heures est conseillé. Un doute ? Appelez-nous avant de vous déplacer.</p></div></article>
+        <article><span>02</span><div><h2 data-i18n="mobile.visitS2Title">Sur place</h2><p data-i18n="mobile.visitS2Desc">La majorité des prélèvements se fait sans rendez-vous, dans un espace calme et accueillant.</p></div></article>
+        <article><span>03</span><div><h2 data-i18n="mobile.visitS3Title">Après le prélèvement</h2><p data-i18n="mobile.visitS3Desc">Les résultats sont validés avec soin. Les délais varient selon le type d’analyse.</p></div></article>
+      </div>
+      <div class="visit-actions"><a class="button button-ink" href="tel:+212808504833"><span data-i18n="mobile.visitCallBtn">Appeler avant ma visite</span><b>→</b></a><a class="button button-outline" href="https://maps.google.com/?q=Hopital+Mokhtar+Soussi,+Avenue+Moulay+Rachid,+Taroudant,+Morocco" target="_blank" rel="noopener noreferrer"><span data-i18n="mobile.visitMapBtn">Itinéraire vers le laboratoire</span><b>↗</b></a></div>
+      <div class="location-card"><span class="location-glyph" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span><div><p data-i18n="mobile.visitFindUs">Nous trouver</p><strong data-i18n="mobile.visitAddress">Av. Moulay Rachid, face à l’hôpital Mokhtar Soussi</strong><span data-i18n="mobile.visitCity">Taroudant</span></div></div>
+    </section>
+
+    <section class="screen page-screen" id="view-contact" aria-label="Contact">
+      <div class="page-top"><p class="eyebrow" data-i18n="mobile.contactKicker">04 / CONTACT</p><h1 data-i18n="contact.title">Parlons de votre parcours.</h1><p data-i18n="contact.lead">Une question, un besoin précis ou envie de préparer votre visite ? Notre équipe vous répond.</p></div>
+      <div class="contact-shortcuts"><a href="tel:+212808504833"><span data-i18n="mobile.contactFixed">Fixe</span><strong>08 08 504 833</strong><b>→</b></a><a href="tel:+212623960756"><span data-i18n="mobile.contactMobile">Portable</span><strong>06 23 960 756</strong><b>→</b></a><a href="mailto:labo.babelkasbah@gmail.com" target="_blank" rel="noopener noreferrer"><span>Email</span><strong>labo.babelkasbah@gmail.com</strong><b>↗</b></a></div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-intro"><p class="eyebrow" data-i18n="mobile.contactFastMsg">MESSAGE RAPIDE</p><h2 data-i18n="mobile.contactReply">On vous répond dès que possible.</h2></div>
+        <label><span data-i18n="contact.formName">Nom complet</span><input id="contactName" name="name" type="text" autocomplete="name" placeholder="Votre nom et prénom" data-i18n-placeholder="contact.formNamePlaceholder" required></label>
+        <label><span data-i18n="contact.formPhone">Téléphone</span><input id="contactPhone" name="phone" type="tel" autocomplete="tel" placeholder="06XX XX XX XX" data-i18n-placeholder="contact.formPhonePlaceholder" required></label>
+        <label><span data-i18n="contact.formSubject">Votre demande</span><select id="contactSubject" name="subject" data-i18n-select="contact.formSubjectOptions"><option>Prendre rendez-vous</option><option>Renseignement sur une analyse</option><option>Question sur un résultat</option><option>Autre demande</option></select></label>
+        <label><span data-i18n="contact.formMessage">Message</span><textarea id="contactMessage" name="message" rows="3" placeholder="Comment pouvons-nous vous aider ?" data-i18n-placeholder="contact.formMessagePlaceholder"></textarea></label>
+        <button class="button button-ink submit-button" id="contactSubmit" type="submit"><span data-i18n="contact.formSubmit">Envoyer la demande</span><b>↗</b></button>
+      </form>
+    </section>
+
+    <section class="screen page-screen" id="view-info" aria-label="Le laboratoire">
+      <div class="page-top"><p class="eyebrow" data-i18n="mobile.infoKicker">05 / LE LABORATOIRE</p><h1 data-i18n="mobile.infoTitle">La science, avec une vraie attention.</h1><p data-i18n="mobile.infoLead">Une équipe engagée pour rendre la biologie médicale plus claire, plus humaine et plus fluide.</p></div>
+      <figure class="team-panel"><img src="assets/team pic.png" alt="L’équipe du laboratoire BAB EL KASBAH" data-i18n-alt="team.imgAlt" /><figcaption><span data-i18n="mobile.infoDir">Direction médicale</span><strong>Dr. CHELLAOUI Said</strong></figcaption></figure>
+      <div class="proof-grid"><article><strong>120k+</strong><span data-i18n="results.stat1Label">analyses / an</span></article><article><strong>15</strong><span data-i18n="results.stat2Label">biologistes & experts</span></article><article><strong>24h</strong><span data-i18n="results.stat3Label">délai moyen de rendu</span></article></div>
+      <section class="faq-section">
+        <div class="sub-section-heading"><p class="eyebrow" data-i18n="mobile.faqKicker">QUESTIONS FRÉQUENTES</p><h2 data-i18n="mobile.faqTitle">Les réponses essentielles.</h2></div>
+        <div class="faq-list">
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Dois-je venir à jeun pour une prise de sang ?<span class="faq-icon">+</span></button><div class="faq-a"><p>Selon l’analyse. Un jeûne de 8 à 12 h est recommandé pour la glycémie et le bilan lipidique.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Sous quel délai puis-je recevoir mes résultats ?<span class="faq-icon">+</span></button><div class="faq-a"><p>La majorité des analyses de routine est rendue sous 24 h. Certains dosages spécialisés peuvent nécessiter davantage de temps.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Faut-il prendre rendez-vous ?<span class="faq-icon">+</span></button><div class="faq-a"><p>La grande majorité des analyses de routine s’effectue sans rendez-vous, du lundi au samedi dès 07:00.</p></div></article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="sheet-scrim" id="langScrim"></div>
+  <section class="language-sheet" id="langSheet" role="dialog" aria-modal="true" aria-label="Choisir la langue"><div class="sheet-handle"></div><p class="eyebrow" data-i18n="mobile.langKicker">LANGUE</p><h2 data-i18n="mobile.langTitle">Choisissez votre langue.</h2><div class="language-options"><button type="button" data-m-lang="fr"><span>Français</span><b>FR</b></button><button type="button" data-m-lang="ar"><span>العربية</span><b>AR</b></button><button type="button" data-m-lang="en"><span>English</span><b>EN</b></button></div></section>
+
+  <script src="translations.js"></script>
+  <script src="js/modules/i18n.js"></script>
+  <script src="js/modules/analyses.js"></script>
+  <script src="js/modules/contact.js"></script>
+  <script src="js/modules/mobile-nav.js"></script>
+</body>
+</html>

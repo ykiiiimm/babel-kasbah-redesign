@@ -1,0 +1,23 @@
+/* ============================================================
+   TEAM — Section 03: Direction & Team Showcase
+   ============================================================ */
+
+.team-section {
+    background: #eef0f5;
+    position: relative;
+}
+
+.team-showcase {
+    margin-top: 48px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(10, 16, 32, 0.08);
+    background: #080d1a;
+}
+
+.team-pic {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 28px;
+}

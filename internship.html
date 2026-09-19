@@ -1,0 +1,1361 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title id="pageTitle" data-i18n="internship.metaTitle">Candidature de Stage — Laboratoire BAB EL KASBAH · Dr. CHELLAOUI Said</title>
+  <meta id="pageDescription" name="description"
+    content="Postulez pour un stage au Laboratoire BAB EL KASBAH à Taroudant. Formation pratique d'excellence sous la direction du Dr. CHELLAOUI Said." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ============================================================
+       INTERNSHIP — Standalone Full-Screen Page
+       No scroll on outer shell. Form panel scrolls internally.
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:   #1026a5;
+      --blue-2: #2043ea;
+      --ink:    #0a1020;
+      --muted:  #6c7485;
+      --paper:  #f4f5f8;
+      --white:  #fff;
+      --red:    #ed171c;
+      --line:   rgba(10, 16, 32, .12);
+      --radius: 20px;
+      --shadow: 0 24px 64px rgba(14, 21, 55, .13);
+      --font:   'DM Sans', 'Tajawal', sans-serif;
+      --font-heading: 'Manrope', 'Tajawal', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: var(--font);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    /* ── WRAPPER ───────────────────────────────────────────── */
+    .intern-shell {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── LEFT PANEL ─────────────────────────────────────────── */
+    .intern-left {
+      position: relative;
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 40px 36px;
+      overflow: hidden;
+    }
+
+    /* Background geometry */
+    .intern-left::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+      pointer-events: none;
+    }
+    .intern-left::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      pointer-events: none;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: color .2s;
+      position: relative;
+      z-index: 2;
+    }
+    .back-link:hover { color: rgba(255,255,255,.9); }
+    .back-link svg { flex-shrink: 0; }
+
+    /* Left middle content */
+    .intern-left-body {
+      position: relative;
+      z-index: 2;
+    }
+
+    .left-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 16px;
+    }
+
+    .left-title {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 2.8vw, 38px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .left-title em {
+      font-style: italic;
+      color: rgba(255,255,255,.55);
+      font-weight: 600;
+    }
+
+    .left-lead {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255,255,255,.65);
+      max-width: 340px;
+      margin-bottom: 36px;
+    }
+
+    /* Info lines */
+    .left-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .left-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .left-info-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.4);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .left-info-item strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 2px;
+    }
+
+    .left-info-item span {
+      font-size: 12.5px;
+      color: rgba(255,255,255,.5);
+      line-height: 1.4;
+    }
+
+    /* Left footer — branding */
+    .intern-left-footer {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 24px;
+    }
+
+    .left-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .left-logo-row img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: .75;
+    }
+
+    .left-lab-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,.6);
+      line-height: 1.3;
+    }
+
+    .left-lab-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,.35);
+      margin-top: 2px;
+    }
+
+    /* ── RIGHT PANEL ────────────────────────────────────────── */
+    .intern-right {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    /* Right top bar — language + step indicator */
+    .intern-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 36px;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    .intern-mobile-back {
+      display: none;
+    }
+
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .step-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--line);
+      transition: all .3s ease;
+    }
+
+    .step-dot.done { background: var(--blue); transform: scale(1.2); }
+    .step-dot.active { background: var(--blue-2); box-shadow: 0 0 0 3px rgba(32,67,234,.15); transform: scale(1.3); }
+
+    /* Language switcher in topbar */
+    .topbar-lang {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 4px;
+    }
+
+    .topbar-lang-btn {
+      padding: 5px 12px;
+      border-radius: 7px;
+      border: none;
+      background: transparent;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .topbar-lang-btn.is-active {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* Right scrollable area */
+    .intern-form-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 36px 36px 48px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(10,16,32,.15) transparent;
+    }
+
+    .intern-form-scroll::-webkit-scrollbar { width: 4px; }
+    .intern-form-scroll::-webkit-scrollbar-thumb { background: rgba(10,16,32,.15); border-radius: 4px; }
+
+    /* Form header */
+    .form-page-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -.01em;
+      margin-bottom: 4px;
+    }
+
+    .form-page-sub {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    /* ── FORM LAYOUT ────────────────────────────────────────── */
+    .form-block {
+      margin-bottom: 32px;
+    }
+
+    .form-block-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-block-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(16,38,165,.12);
+    }
+
+    .fg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .fg3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .fg4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.span2 { grid-column: span 2; }
+    .form-group.span3 { grid-column: span 3; }
+    .form-group.span4 { grid-column: span 4; }
+
+    .flabel {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .finput,
+    .fselect,
+    .ftextarea {
+      font-family: var(--font);
+      font-size: 13.5px;
+      color: var(--ink);
+      padding: 11px 14px;
+      border: 1.5px solid rgba(10,16,32,.12);
+      border-radius: 12px;
+      background: #fff;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      width: 100%;
+    }
+
+    .finput:focus,
+    .fselect:focus,
+    .ftextarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(16,38,165,.1);
+    }
+
+    .finput.err,
+    .fselect.err,
+    .ftextarea.err {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(237,23,28,.07);
+    }
+
+    .fselect {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236c7485' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 14px;
+      padding-right: 36px;
+    }
+
+    .ftextarea {
+      min-height: 90px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .ferror {
+      font-size: 11.5px;
+      color: var(--red);
+      display: none;
+      margin-top: 1px;
+    }
+    .ferror.show { display: block; }
+
+    /* ── FILE UPLOAD ─────────────────────────────────────────── */
+    .upload-zone {
+      position: relative;
+      border: 1.5px dashed rgba(16,38,165,.22);
+      background: rgba(16,38,165,.025);
+      border-radius: 14px;
+      padding: 20px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .upload-zone:hover,
+    .upload-zone.dragover {
+      border-color: var(--blue);
+      background: rgba(32,67,234,.05);
+    }
+
+    .upload-zone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .upload-zone-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .upload-icon-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(16,38,165,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .upload-icon-wrap svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--blue);
+    }
+
+    .upload-zone-text {
+      text-align: left;
+    }
+
+    .upload-zone-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .upload-zone-text span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .upload-browse {
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* File chip */
+    .file-chip {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1.5px solid rgba(16,38,165,.2);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-top: 8px;
+    }
+    .file-chip.active { display: flex; }
+
+    .chip-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: rgba(237,23,28,.09);
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chip-info { flex: 1; overflow: hidden; }
+    .chip-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .chip-size { font-size: 11.5px; color: var(--muted); }
+
+    .chip-remove {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 16px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      transition: all .2s;
+    }
+    .chip-remove:hover { color: var(--red); background: rgba(237,23,28,.06); }
+
+    /* Cover letter toggle */
+    .cl-toggle {
+      display: inline-flex;
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      padding: 3px;
+      gap: 3px;
+      margin-bottom: 10px;
+    }
+
+    .cl-tab {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .cl-tab.active {
+      background: #fff;
+      color: var(--blue);
+      box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    }
+
+    /* ── PRIVACY ─────────────────────────────────────────────── */
+    .privacy-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(16,38,165,.03);
+      border: 1.5px solid rgba(16,38,165,.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .privacy-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .privacy-row label {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    /* ── SUBMIT ──────────────────────────────────────────────── */
+    .submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .submit-note {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .submit-note::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-2) 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(16,38,165,.28);
+      transition: all .3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(16,38,165,.36);
+    }
+
+    .btn-submit:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-submit-arrow { transition: transform .3s ease; }
+    .btn-submit:hover .btn-submit-arrow { transform: translateX(4px); }
+
+    /* ── SUCCESS MODAL ───────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,16,32,.55);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; animation: fadeIn .3s ease; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp {
+      from { transform: translateY(24px) scale(.97); opacity: 0; }
+      to   { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .modal-card {
+      background: #fff;
+      border-radius: 24px;
+      max-width: 560px;
+      width: 100%;
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,.22);
+      animation: slideUp .35s cubic-bezier(.16,1,.3,1) forwards;
+    }
+
+    .modal-check {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: rgba(34,197,94,.1);
+      color: #16a34a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+
+    .modal-check svg { width: 32px; height: 32px; }
+
+    .modal-card h2 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .modal-card p.lead {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .modal-ref {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .modal-ref span { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .modal-ref strong { font-size: 15px; color: var(--blue); font-family: monospace; letter-spacing: .04em; }
+
+    .modal-summary {
+      text-align: left;
+      background: #f9fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      font-size: 13px;
+    }
+
+    .modal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px dashed rgba(10,16,32,.06);
+    }
+    .modal-summary-row:last-child { border-bottom: none; }
+    .modal-summary-row .k { color: var(--muted); }
+    .modal-summary-row .v { font-weight: 600; color: var(--ink); }
+
+    .modal-timeline {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 26px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .btn-primary:hover { background: var(--blue-2); }
+
+    .btn-secondary {
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .btn-secondary:hover { background: #eaedf4; }
+
+    /* ── RTL ─────────────────────────────────────────────────── */
+    html[dir="rtl"] .fselect {
+      background-position: left 12px center;
+      padding-right: 14px;
+      padding-left: 36px;
+    }
+    html[dir="rtl"] .intern-left {
+      border-left: none;
+      border-right: 1px solid rgba(255,255,255,.06);
+    }
+    html[dir="rtl"] .modal-summary { text-align: right; }
+    html[dir="rtl"] .btn-submit:hover .btn-submit-arrow { transform: translateX(-4px); }
+
+    /* ── SCROLLBAR (Right Panel) ─────────────────────────────── */
+    * { scrollbar-width: thin; scrollbar-color: rgba(10,16,32,.12) transparent; }
+    *::-webkit-scrollbar { width: 4px; }
+    *::-webkit-scrollbar-thumb { background: rgba(10,16,32,.12); border-radius: 4px; }
+
+    /* Language Loader */
+    .language-loader {
+      position: fixed;
+      inset: 0;
+      background: rgba(244,245,248,.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--line);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin .65s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── PHONE LAYOUT ───────────────────────────────────────── */
+    @media (max-width: 760px) {
+      html, body {
+        height: auto;
+        min-height: 100%;
+        overflow: auto;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      .intern-shell {
+        display: block;
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+      }
+
+      .intern-left {
+        display: none;
+      }
+
+      .intern-right {
+        display: block;
+        overflow: visible;
+      }
+
+      .intern-topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: calc(env(safe-area-inset-top, 0px) + 12px) 18px 12px;
+      }
+
+      .intern-mobile-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .intern-mobile-back > span:first-child { font-size: 17px; }
+      .step-indicator { display: none; }
+      .topbar-lang { padding: 3px; }
+      .topbar-lang-btn { padding: 5px 9px; font-size: 11px; }
+
+      .intern-form-scroll {
+        display: block;
+        overflow: visible;
+        padding: 27px 18px calc(env(safe-area-inset-bottom, 0px) + 32px);
+      }
+
+      .form-page-title { font-size: 23px; }
+      .form-page-sub { margin-bottom: 27px; font-size: 13px; line-height: 1.5; }
+      .form-block { margin-bottom: 27px; }
+      .form-block-label { margin-bottom: 13px; }
+
+      .fg2, .fg3, .fg4 { grid-template-columns: 1fr; gap: 12px; }
+      .form-group.span2, .form-group.span3, .form-group.span4 { grid-column: auto; }
+
+      .finput, .fselect, .ftextarea {
+        min-height: 46px;
+        font-size: 16px;
+      }
+
+      .ftextarea { min-height: 108px; }
+      .upload-zone { padding: 15px 13px; }
+      .upload-zone-inner { justify-content: flex-start; }
+      .upload-zone-text strong { font-size: 12px; }
+      .upload-zone-text span { font-size: 11px; }
+      .cl-tab { flex: 1; padding: 8px 11px; }
+      .cl-toggle { display: flex; width: 100%; }
+      .privacy-row { padding: 13px; }
+      .privacy-row label { font-size: 12px; }
+
+      .submit-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 13px;
+        margin-top: 23px;
+        padding-top: 20px;
+      }
+
+      .submit-note { font-size: 11px; }
+      .btn-submit { width: 100%; min-height: 50px; justify-content: center; }
+
+      .modal-overlay { align-items: flex-end; padding: 0; }
+      .modal-card {
+        max-height: 88svh;
+        overflow-y: auto;
+        border-radius: 24px 24px 0 0;
+        padding: 28px 20px calc(env(safe-area-inset-bottom, 0px) + 25px);
+      }
+
+      .modal-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="languageLoader" class="language-loader" style="display:none;"><div class="spinner"></div></div>
+
+  <div class="intern-shell">
+
+    <!-- ══ LEFT PANEL ══════════════════════════════════════════ -->
+    <aside class="intern-left">
+
+      <a class="back-link" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        <span data-i18n="nav.home">Accueil</span>
+      </a>
+
+      <div class="intern-left-body">
+        <div class="left-eyebrow" data-i18n="internship.heroBadge">CANDIDATURE DE STAGE</div>
+        <h1 class="left-title">
+          <span data-i18n="internship.heroTitle">Postuler pour un stage</span><br>
+          <em data-i18n="internship.heroTitleEm">au Laboratoire.</em>
+        </h1>
+        <p class="left-lead" data-i18n="internship.heroLead">
+          Formation pratique en biologie médicale sous la supervision du <strong style="color:rgba(255,255,255,.85);font-weight:700;">Dr. CHELLAOUI Said</strong>, spécialiste en biologie clinique.
+        </p>
+
+        <ul class="left-info-list">
+          <li class="left-info-item">
+            <div class="left-info-dot"></div>
+            <div>
+              <strong data-i18n="internship.highlight1Title">Encadrement Clinique</strong>
+              <span data-i18n="internship.highlight1Desc">Supervision directe et accompagnement scientifique par notre équipe de biologistes.</span>
+            </div>
+          </li>
+          <li class="left-info-item">
+            <div class="left-info-dot"></div>
+            <div>
+              <strong data-i18n="internship.highlight2Title">Plateau Technique Moderne</strong>
+              <span data-i18n="internship.highlight2Desc">Analyseurs automatisés en biochimie, hématologie et immunologie.</span>
+            </div>
+          </li>
+          <li class="left-info-item">
+            <div class="left-info-dot"></div>
+            <div>
+              <strong data-i18n="internship.highlight3Title">Convention & Attestation</strong>
+              <span data-i18n="internship.highlight3Desc">Convention officielle et attestation délivrée à l'issue du stage.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="intern-left-footer">
+        <div class="left-logo-row">
+          <img src="assets/logo.png" alt="Laboratoire BAB EL KASBAH" />
+        </div>
+        <div class="left-lab-name">Laboratoire BAB EL KASBAH</div>
+        <div class="left-lab-sub">Dr. CHELLAOUI Said · Taroudant</div>
+      </div>
+    </aside>
+
+    <!-- ══ RIGHT PANEL ═════════════════════════════════════════ -->
+    <div class="intern-right">
+
+      <!-- Topbar: steps + language -->
+      <div class="intern-topbar">
+        <a class="intern-mobile-back" href="index.html" aria-label="Retour à l'accueil">
+          <span aria-hidden="true">←</span><span data-i18n="nav.home">Accueil</span>
+        </a>
+        <div class="step-indicator" id="stepDots">
+          <div class="step-dot active" id="dot1"></div>
+          <div class="step-dot" id="dot2"></div>
+          <div class="step-dot" id="dot3"></div>
+          <div class="step-dot" id="dot4"></div>
+          <div class="step-dot" id="dot5"></div>
+        </div>
+
+        <div class="topbar-lang">
+          <button class="topbar-lang-btn" data-ls="fr">FR</button>
+          <button class="topbar-lang-btn" data-ls="ar">ع</button>
+          <button class="topbar-lang-btn" data-ls="en">EN</button>
+        </div>
+      </div>
+
+      <!-- Scrollable form area -->
+      <div class="intern-form-scroll">
+        <h2 class="form-page-title" data-i18n="internship.step1Title">Informations Personnelles</h2>
+        <p class="form-page-sub" data-i18n="internship.step1Desc">Remplissez le formulaire pour soumettre votre candidature.</p>
+
+        <form id="internshipForm" action="https://formsubmit.co/hakimlhdid@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="_subject" id="formSubmitSubject" value="[Stage] Candidature au Laboratoire BAB EL KASBAH" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <!-- § 1 Personal -->
+          <div class="form-block">
+            <div class="form-block-label" data-i18n="internship.step1Title">Informations Personnelles</div>
+            <div class="fg2">
+              <div class="form-group">
+                <label class="flabel" for="fullName" data-i18n="internship.nameLabel">Nom et Prénom *</label>
+                <input type="text" id="fullName" name="Nom_Complet" class="finput" data-i18n-placeholder="internship.namePlaceholder" placeholder="Ex. Sara El Idrissi" required />
+                <div class="ferror" id="errName">Veuillez renseigner votre nom complet.</div>
+              </div>
+              <div class="form-group">
+                <label class="flabel" for="city" data-i18n="internship.cityLabel">Ville *</label>
+                <input type="text" id="city" name="Ville" class="finput" data-i18n-placeholder="internship.cityPlaceholder" placeholder="Ex. Taroudant, Agadir..." required />
+                <div class="ferror" id="errCity">Veuillez renseigner votre ville.</div>
+              </div>
+              <div class="form-group">
+                <label class="flabel" for="email" data-i18n="internship.emailLabel">Adresse E-mail *</label>
+                <input type="email" id="email" name="Email" class="finput" data-i18n-placeholder="internship.emailPlaceholder" placeholder="sara.idrissi@example.com" required />
+                <div class="ferror" id="errEmail">Adresse e-mail invalide.</div>
+              </div>
+              <div class="form-group">
+                <label class="flabel" for="phone" data-i18n="internship.phoneLabel">Téléphone *</label>
+                <input type="tel" id="phone" name="Telephone" class="finput" data-i18n-placeholder="internship.phonePlaceholder" placeholder="Ex. 06 12 34 56 78" required />
+                <div class="ferror" id="errPhone">Numéro de téléphone invalide.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- § 2 Academic -->
+          <div class="form-block">
+            <div class="form-block-label" data-i18n="internship.step2Title">Parcours Académique</div>
+            <div class="fg3">
+              <div class="form-group span3">
+                <label class="flabel" for="school" data-i18n="internship.schoolLabel">Université / Établissement *</label>
+                <input type="text" id="school" name="Etablissement" class="finput" data-i18n-placeholder="internship.schoolPlaceholder" placeholder="Ex. Faculté des Sciences Ibn Zohr, EST, FST..." required />
+                <div class="ferror" id="errSchool">Veuillez indiquer votre établissement.</div>
+              </div>
+              <div class="form-group span2">
+                <label class="flabel" for="degree" data-i18n="internship.degreeLabel">Filière *</label>
+                <select id="degree" name="Filiere" class="fselect" data-i18n-select="internship.degreeOptions" required>
+                  <option value="">Sélectionnez...</option>
+                  <option>Biologie Clinique / Analyses Médicales</option>
+                  <option>Biochimie &amp; Biologie Moléculaire</option>
+                  <option>Microbiologie &amp; Biotechnologie</option>
+                  <option>Sciences Biomédicales / Santé</option>
+                  <option>Chimie &amp; Contrôle Qualité</option>
+                  <option>Pharmacie / Médecine</option>
+                  <option>Autre filière scientifique</option>
+                </select>
+                <div class="ferror" id="errDegree">Veuillez choisir votre filière.</div>
+              </div>
+              <div class="form-group">
+                <label class="flabel" for="yearOfStudy" data-i18n="internship.yearLabel">Niveau *</label>
+                <select id="yearOfStudy" name="Niveau_Etudes" class="fselect" data-i18n-select="internship.yearOptions" required>
+                  <option value="">Niveau...</option>
+                  <option>1ère année (Bac+1)</option>
+                  <option>2ème année / BTS / DUT (Bac+2)</option>
+                  <option>3ème année / Licence (Bac+3)</option>
+                  <option>Master 1 (Bac+4)</option>
+                  <option>Master 2 / PFE (Bac+5)</option>
+                  <option>Doctorat</option>
+                </select>
+                <div class="ferror" id="errYear">Veuillez choisir votre niveau.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- § 3 Internship Details -->
+          <div class="form-block">
+            <div class="form-block-label" data-i18n="internship.step3Title">Détails du Stage</div>
+            <div class="fg4">
+              <div class="form-group span2">
+                <label class="flabel" for="internshipType" data-i18n="internship.typeLabel">Type de Stage *</label>
+                <select id="internshipType" name="Type_Stage" class="fselect" data-i18n-select="internship.typeOptions" required>
+                  <option value="">Type de stage...</option>
+                  <option>Stage PFE (Fin d'Études)</option>
+                  <option>Stage d'initiation / Découverte</option>
+                  <option>Stage technicien</option>
+                  <option>Stage de recherche / Master</option>
+                  <option>Stage d'observation</option>
+                </select>
+                <div class="ferror" id="errType">Veuillez spécifier le type.</div>
+              </div>
+              <div class="form-group">
+                <label class="flabel" for="startDate" data-i18n="internship.startDateLabel">Date de début *</label>
+                <input type="date" id="startDate" name="Date_Debut" class="finput" required />
+                <div class="ferror" id="errDate">Veuillez indiquer une date.</div>
+              </div>
+              <div class="form-group">
+                <label class="flabel" for="duration" data-i18n="internship.durationLabel">Durée *</label>
+                <select id="duration" name="Duree" class="fselect" data-i18n-select="internship.durationOptions" required>
+                  <option value="">Durée...</option>
+                  <option>1 mois</option>
+                  <option>2 mois</option>
+                  <option>3 mois</option>
+                  <option>4 à 6 mois</option>
+                  <option>Plus de 6 mois</option>
+                </select>
+                <div class="ferror" id="errDuration">Veuillez choisir la durée.</div>
+              </div>
+              <div class="form-group span4">
+                <label class="flabel" for="department" data-i18n="internship.departmentLabel">Département d'intérêt *</label>
+                <select id="department" name="Departement" class="fselect" data-i18n-select="internship.departmentOptions" required>
+                  <option value="">Sélectionnez un département...</option>
+                  <option>Biochimie Clinique &amp; Hormonologie</option>
+                  <option>Microbiologie, Bactériologie &amp; Parasitologie</option>
+                  <option>Hématologie, Cytologie &amp; Hémostase</option>
+                  <option>Immunologie &amp; Sérologie Infectieuse</option>
+                  <option>Contrôle Qualité &amp; Assurance Qualité</option>
+                  <option>R&amp;D / Recherche Appliquée</option>
+                  <option>Polyvalent — Rotation complète</option>
+                </select>
+                <div class="ferror" id="errDept">Veuillez sélectionner un département.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- § 4 Documents -->
+          <div class="form-block">
+            <div class="form-block-label" data-i18n="internship.step4Title">Documents</div>
+
+            <!-- CV -->
+            <div class="form-group" style="margin-bottom:14px;">
+              <label class="flabel" data-i18n="internship.cvLabel">
+                Curriculum Vitae (CV) *
+                <span style="font-weight:400;color:var(--muted);font-size:11px;margin-left:6px;" data-i18n="internship.cvHint">PDF · max 5 Mo</span>
+              </label>
+              <div class="upload-zone" id="cvUploadZone">
+                <input type="file" id="cvInput" name="attachment" accept=".pdf,application/pdf" required />
+                <div class="upload-zone-inner">
+                  <div class="upload-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                  </div>
+                  <div class="upload-zone-text">
+                    <strong><span data-i18n="internship.cvDropText">Déposez votre CV ici</span> <span class="upload-browse" data-i18n="internship.cvBrowse">ou parcourir</span></strong>
+                    <span>PDF uniquement · 5 Mo max</span>
+                  </div>
+                </div>
+              </div>
+              <div class="file-chip" id="cvPreview">
+                <div class="chip-icon">PDF</div>
+                <div class="chip-info">
+                  <div class="chip-name">cv.pdf</div>
+                  <div class="chip-size">0 KB</div>
+                </div>
+                <button type="button" class="chip-remove">✕</button>
+              </div>
+              <div class="ferror" id="cvUploadZoneError">Veuillez téléverser votre CV (PDF, max 5 Mo).</div>
+            </div>
+
+            <!-- Cover Letter -->
+            <div class="form-group" style="margin-bottom:14px;">
+              <label class="flabel" data-i18n="internship.coverLetterLabel">Lettre de Motivation <span style="font-weight:400;color:var(--muted);">(optionnel)</span></label>
+              <div class="cl-toggle">
+                <button type="button" class="cl-tab active" id="coverTabUpload" data-i18n="internship.coverLetterToggleFile">PDF</button>
+                <button type="button" class="cl-tab" id="coverTabText" data-i18n="internship.coverLetterToggleText">Rédiger</button>
+              </div>
+              <div id="coverUploadWrapper">
+                <div class="upload-zone" id="coverUploadZone">
+                  <input type="file" id="coverInput" name="attachment2" accept=".pdf,application/pdf" />
+                  <div class="upload-zone-inner">
+                    <div class="upload-icon-wrap">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                      </svg>
+                    </div>
+                    <div class="upload-zone-text">
+                      <strong><span data-i18n="internship.coverLetterDropText">Déposez votre lettre ici</span> <span class="upload-browse" data-i18n="internship.cvBrowse">ou parcourir</span></strong>
+                      <span>PDF · 5 Mo max</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="file-chip" id="coverPreview">
+                  <div class="chip-icon">PDF</div>
+                  <div class="chip-info">
+                    <div class="chip-name">lettre.pdf</div>
+                    <div class="chip-size">0 KB</div>
+                  </div>
+                  <button type="button" class="chip-remove">✕</button>
+                </div>
+              </div>
+              <div id="coverTextWrapper" style="display:none;">
+                <textarea id="coverLetterText" name="Lettre_Motivation_Texte" class="ftextarea" data-i18n-placeholder="internship.coverLetterTextPlaceholder" placeholder="Présentez vos motivations..."></textarea>
+              </div>
+              <div class="ferror" id="coverUploadZoneError"></div>
+            </div>
+
+            <!-- Certificate -->
+            <div class="form-group">
+              <label class="flabel" data-i18n="internship.certificateLabel">
+                Attestation de Scolarité
+                <span style="font-weight:400;color:var(--muted);font-size:11px;margin-left:6px;" data-i18n="internship.certificateHint">PDF · optionnel</span>
+              </label>
+              <div class="upload-zone" id="certUploadZone">
+                <input type="file" id="certInput" name="attachment3" accept=".pdf,application/pdf" />
+                <div class="upload-zone-inner">
+                  <div class="upload-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="9" y1="9" x2="15" y2="9"></line>
+                      <line x1="9" y1="13" x2="15" y2="13"></line>
+                      <line x1="9" y1="17" x2="13" y2="17"></line>
+                    </svg>
+                  </div>
+                  <div class="upload-zone-text">
+                    <strong><span data-i18n="internship.certificateDropText">Attestation de scolarité</span> <span class="upload-browse" data-i18n="internship.cvBrowse">ou parcourir</span></strong>
+                    <span>PDF · 5 Mo max</span>
+                  </div>
+                </div>
+              </div>
+              <div class="file-chip" id="certPreview">
+                <div class="chip-icon">PDF</div>
+                <div class="chip-info">
+                  <div class="chip-name">attestation.pdf</div>
+                  <div class="chip-size">0 KB</div>
+                </div>
+                <button type="button" class="chip-remove">✕</button>
+              </div>
+              <div class="ferror" id="certUploadZoneError"></div>
+            </div>
+          </div>
+
+          <!-- § 5 Privacy & Submit -->
+          <div class="form-block">
+            <div class="form-block-label" data-i18n="internship.step5Title">Confidentialité &amp; Envoi</div>
+
+            <div class="privacy-row" style="margin-bottom:10px;">
+              <input type="checkbox" id="privacyConsent" name="Consentement_RGPD" value="Oui" required />
+              <label for="privacyConsent" data-i18n="internship.privacyNotice">
+                J'accepte que mes informations soient traitées par le Laboratoire BAB EL KASBAH exclusivement pour l'étude de ma candidature, conformément à la Loi 09-08 / RGPD.
+              </label>
+            </div>
+            <div class="ferror" id="privacyError" data-i18n="internship.privacyRequired">Veuillez accepter la politique de confidentialité.</div>
+
+            <div class="ferror" id="submitGeneralError" style="margin-top:14px;padding:12px 16px;background:rgba(237,23,28,.08);border:1px solid rgba(237,23,28,.2);border-radius:10px;text-align:center;"></div>
+
+            <div class="submit-row">
+              <p class="submit-note" data-i18n="internship.step5Desc">Données transmises directement à la direction du laboratoire.</p>
+              <button type="submit" class="btn-submit" id="submitInternshipBtn">
+                <span id="submitBtnText" data-i18n="internship.submitBtn">Soumettre ma candidature</span>
+                <span class="btn-submit-arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div><!-- /intern-form-scroll -->
+    </div><!-- /intern-right -->
+  </div><!-- /intern-shell -->
+
+  <!-- ══ SUCCESS MODAL ══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="internshipModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-check">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h2 id="modalTitle" data-i18n="internship.successTitle">Candidature Enregistrée avec Succès !</h2>
+      <p class="lead" data-i18n="internship.successSub">Votre dossier a bien été transmis à la direction du Laboratoire BAB EL KASBAH.</p>
+
+      <div class="modal-ref">
+        <span data-i18n="internship.refLabel">Référence :</span>
+        <strong id="modalRefNumber">BK-STG-2026-0000</strong>
+      </div>
+
+      <div class="modal-summary">
+        <div class="modal-summary-row">
+          <span class="k">Candidat</span>
+          <span class="v" id="modalSummaryName">—</span>
+        </div>
+        <div class="modal-summary-row">
+          <span class="k">E-mail</span>
+          <span class="v" id="modalSummaryEmail">—</span>
+        </div>
+        <div class="modal-summary-row">
+          <span class="k">Département</span>
+          <span class="v" id="modalSummaryDept">—</span>
+        </div>
+        <div class="modal-summary-row">
+          <span class="k">Durée</span>
+          <span class="v" id="modalSummaryDuration">—</span>
+        </div>
+        <div class="modal-summary-row">
+          <span class="k">CV joint</span>
+          <span class="v" id="modalSummaryCv">—</span>
+        </div>
+      </div>
+
+      <p class="modal-timeline">
+        <span data-i18n="internship.nextSteps">La direction scientifique et le Dr. CHELLAOUI Said examineront votre dossier sous 48 à 72 heures. Vous serez recontacté par téléphone ou e-mail.</span>
+      </p>
+
+      <div class="modal-actions">
+        <a href="index.html" class="btn-primary" data-i18n="internship.btnReturnHome">Retour à l'accueil</a>
+        <button type="button" class="btn-secondary" id="modalCloseReset" data-i18n="internship.btnNewSubmission">Nouvelle candidature</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="translations.js"></script>
+  <script src="js/modules/i18n.js"></script>
+  <script src="js/modules/internship.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('bkasbah_language') || 'fr';
+
+      // Topbar language buttons (custom mini-switchers for this page)
+      document.querySelectorAll('.topbar-lang-btn').forEach(btn => {
+        btn.classList.toggle('is-active', btn.getAttribute('data-ls') === savedLang);
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-ls');
+          localStorage.setItem('bkasbah_language', lang);
+
+          const loader = document.getElementById('languageLoader');
+          if (loader) loader.style.display = 'flex';
+          setTimeout(() => {
+            if (typeof setLanguage === 'function') setLanguage(lang);
+            document.querySelectorAll('.topbar-lang-btn').forEach(b =>
+              b.classList.toggle('is-active', b.getAttribute('data-ls') === lang)
+            );
+            if (loader) loader.style.display = 'none';
+          }, 280);
+        });
+      });
+
+      if (typeof setLanguage === 'function') setLanguage(savedLang);
+    });
+  </script>
+</body>
+</html>
